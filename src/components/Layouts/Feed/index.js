@@ -15,8 +15,10 @@ function FeedLayout({ exact, path = '/', component: Component }) {
       render={(props) => {
         return (
           <main>
-            <Nav />
-            <Component {...props} />
+            <div className={styles['flex-row']}>
+              <Nav />
+              <Component {...props} />
+            </div>
           </main>
         );
       }}
