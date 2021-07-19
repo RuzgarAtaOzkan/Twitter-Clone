@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
+import cn from 'classnames';
 
 // COMPONENTS
 import Nav from '../../Nav';
@@ -15,7 +16,7 @@ function FeedLayout({ exact, path = '/', component: Component }) {
       render={(props) => {
         return (
           <main>
-            <div className={styles['flex-row']}>
+            <div className={cn(styles['default-layout'])}>
               <Nav />
               <Component {...props} />
             </div>

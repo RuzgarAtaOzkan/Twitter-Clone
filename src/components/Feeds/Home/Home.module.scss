@@ -16,7 +16,7 @@
     font-weight: bold;
     position: sticky;
     top: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
 
     .title-icon {
       font-size: 1.3rem;
@@ -26,15 +26,13 @@
 
   .tweet {
     background-color: white;
-    border: 1px solid red;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 0.8rem;
+    margin-bottom: 1rem;
 
     .left-side {
-      border: 1px solid red;
-
       img {
         width: 50px;
         height: 50px;
@@ -45,13 +43,12 @@
 
     .right-side {
       width: 100%;
-      margin-left: 0.8rem;
-      padding: 1rem;
+      margin-left: 0.5rem;
 
       textarea {
         width: 100%;
         height: 40px;
-        padding-left: 0.4rem;
+        padding-left: 0.5rem;
         border: none;
         outline: none;
         font-size: 1.4rem;
@@ -64,7 +61,7 @@
           display: flex;
           justify-content: flex-start;
           align-items: center;
-          padding: 0.4rem;
+          padding: 0.5rem;
           border-radius: 35px;
           font-size: 15px;
           color: rgba(29, 161, 242, 1);
@@ -79,6 +76,127 @@
 
         .reply-options:hover {
           background-color: rgba(29, 161, 242, 0.12);
+        }
+      }
+
+      .tweet-buttons {
+        border-top: 1px solid rgba($color: #acacac, $alpha: 0.5);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0.6rem;
+
+        .media-buttons {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          margin-top: 0.5rem;
+
+          div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            transition: all 0.2s ease-out;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            cursor: pointer;
+            padding: 0.3rem;
+          }
+
+          div:hover {
+            background-color: #e3f4ff;
+          }
+        }
+
+        .post-tweet-button {
+          margin-top: 0.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0.7rem 1.6rem;
+          border-radius: 30px;
+          font-weight: bold;
+          color: white;
+          background-color: #1da1f2;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .posts-area {
+    .post {
+      border-bottom: 1px solid rgba($color: #949494, $alpha: 0.4);
+      background-color: white;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 0.8rem;
+
+      .left-side {
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+
+      .right-side {
+        width: 100%;
+        margin-left: 0.8rem;
+
+        .info {
+          display: flex;
+          margin-bottom: 1rem;
+
+          & > * {
+            margin-right: 0.4rem;
+          }
+
+          .name {
+            font-weight: bold;
+            color: black;
+          }
+
+          .username {
+            color: rgba($color: #000000, $alpha: 0.6);
+          }
+
+          .time {
+            color: rgba($color: #000000, $alpha: 0.6);
+          }
+        }
+
+        .content {
+          line-height: 22px;
+          width: 90%;
+        }
+
+        .media {
+        }
+
+        .tweet-options {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          .tweet-option {
+            margin-right: 6rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            svg {
+              font-size: 1.3rem;
+            }
+
+            span {
+              margin-left: 0.4rem;
+            }
+          }
         }
       }
     }
