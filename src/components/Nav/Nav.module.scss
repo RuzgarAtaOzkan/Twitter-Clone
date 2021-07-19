@@ -4,10 +4,18 @@ nav {
   flex-direction: column;
   height: 100vh;
   margin-right: 0.8rem;
-  border: 1px solid red;
+
+  @media only screen and (max-width: 1300px) {
+    margin-right: 0rem;
+    align-items: center;
+  }
 
   ul {
-    border: 1px solid red;
+    @media only screen and (max-width: 1300px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     li {
       margin-bottom: 0.7rem;
@@ -112,7 +120,7 @@ nav {
         border-radius: 70px;
         background-color: #1da1f2;
         cursor: pointer;
-        margin: 0.8rem 0rem;
+        margin: 1.6rem 0rem;
         color: white;
         transition: all 0.2s ease-out;
         display: flex;
@@ -120,7 +128,7 @@ nav {
         align-items: center;
 
         @media only screen and (max-width: 1300px) {
-          margin: 0.8rem 0rem;
+          margin: 1rem 0rem;
           width: 60px;
           height: 60px;
         }
@@ -147,7 +155,6 @@ nav {
   }
 
   .account {
-    border: 1px solid red;
     padding: 0.8rem;
     border-radius: 50px;
     cursor: pointer;
@@ -156,15 +163,24 @@ nav {
     align-items: center;
     transition: all 0.2s ease-out;
 
+    & > * {
+      margin-right: 0.3rem;
+
+      @media only screen and (max-width: 1300px) {
+        margin-right: 0;
+      }
+    }
+
     @media only screen and (max-width: 1300px) {
-      justify-content: center;
-      align-items: center;
       padding: 0rem;
+      justify-content: center;
+      display: block;
+      margin-bottom: 0.4rem;
     }
 
     img {
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       object-fit: cover;
       border-radius: 50%;
 

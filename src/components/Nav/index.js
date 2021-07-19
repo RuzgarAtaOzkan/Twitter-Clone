@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
 import cn from 'classnames';
 import { GiFeather } from 'react-icons/gi';
 import {
@@ -28,16 +27,29 @@ import {
   RiFileList2Line as ListIcon,
   RiFileList2Fill as ActiveListIcon,
 } from 'react-icons/ri';
-
 import { IoPersonOutline as PersonIcon } from 'react-icons/io';
 import { BsPersonFill as ActivePersonIcon } from 'react-icons/bs';
 import { CgMoreO as MoreIcon } from 'react-icons/cg';
+import { HiOutlineLightningBolt } from 'react-icons/hi';
+import { BiConversation } from 'react-icons/bi';
+import { GrArticle } from 'react-icons/gr';
+import { RiAdvertisementLine, RiBrushLine } from 'react-icons/ri';
+import { GoGraph } from 'react-icons/go';
+import { IoSettingsOutline } from 'react-icons/io';
+import { BsQuestionCircle } from 'react-icons/bs';
+import { FiSettings } from 'react-icons/fi';
+
+// COMPONENTS
+import Dropdown from '../Dropdown';
 
 // STYLES
 import styles from './Nav.module.scss';
 
 function Nav() {
   const [activeIcon, setActiveIcon] = useState(-1);
+  const [moreOptionsDropdown, setMoreOptionsDropdown] =
+    useState(false);
+  const [accountDropdown, setAccountDropdown] = useState(false);
 
   const navItems = [
     {
@@ -83,15 +95,55 @@ function Nav() {
       path: '/profile',
     },
     {
+      dropdown: (
+        <Dropdown
+          items={[
+            {
+              icon: <BiConversation />,
+              title: 'Topics',
+            },
+            {
+              icon: <HiOutlineLightningBolt />,
+              title: 'Moments',
+            },
+            {
+              icon: <GrArticle />,
+              title: 'Newsletters',
+            },
+            {
+              icon: <RiAdvertisementLine />,
+              title: 'Twitter Ads',
+            },
+            {
+              icon: <GoGraph />,
+              title: 'Analytics',
+            },
+            {
+              icon: <FiSettings />,
+              title: 'Settings and Privacy',
+              divider: true,
+            },
+            {
+              icon: <BsQuestionCircle />,
+              title: 'Help Center',
+            },
+            {
+              icon: <RiBrushLine />,
+              title: 'Display',
+            },
+          ]}
+          active={moreOptionsDropdown}
+          setActive={setMoreOptionsDropdown}
+        />
+      ),
       activeIcon: <MoreIcon />,
       icon: <MoreIcon />,
       title: 'More',
+      onClick: () => {
+        setMoreOptionsDropdown(!moreOptionsDropdown);
+      },
     },
   ];
-
-  useEffect(() => {
-    console.log(activeIcon);
-  }, [activeIcon]);
 
   return (
     <>
@@ -123,8 +175,12 @@ function Nav() {
                   )}
                 >
                   <Link
-                    onClick={() => setActiveIcon(index)}
+                    onClick={() => {
+                      setActiveIcon(index);
+                      navItem.onClick && navItem.onClick();
+                    }}
                     to={navItem.path && navItem.path}
+                    className={navItem.dropdown && 'pos-rel'}
                   >
                     <div className={styles['icon']}>
                       {index === activeIcon
@@ -135,6 +191,8 @@ function Nav() {
                     <div className={styles['title']}>
                       {navItem.title}
                     </div>
+
+                    {navItem.dropdown && navItem.dropdown}
                   </Link>
                 </div>
               </li>

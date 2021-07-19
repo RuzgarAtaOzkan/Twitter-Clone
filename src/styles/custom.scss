@@ -1,0 +1,15 @@
+main {
+  .pos-rel {
+    position: relative;
+  }
+
+  .pos-ab {
+    position: absolute;
+  }
+
+  .dd-divider {
+    width: 100%;
+    border-top: 1px solid rgba($color: #979797, $alpha: 0.4);
+    margin: 0.3rem 0;
+  }
+}
