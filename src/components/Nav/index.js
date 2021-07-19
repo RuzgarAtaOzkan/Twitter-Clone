@@ -149,109 +149,113 @@ function Nav() {
 
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <div
-              className={cn(
-                styles['list-item-container'],
-                styles['reset'],
-              )}
-            >
-              <Link to="/home">
-                <div className={cn(styles['main-icon'])}>
-                  <TwitterIcon />
-                </div>
-              </Link>
-            </div>
-          </li>
-          {navItems.map((navItem, index) => {
-            return (
-              <li key={index}>
-                <div
-                  className={cn(
-                    styles['list-item-container'],
-                    index === activeIcon
-                      ? styles['active-item']
-                      : null,
-                  )}
-                >
-                  <Link
-                    onClick={() => {
-                      setActiveIcon(index);
-                      navItem.onClick && navItem.onClick();
-                    }}
-                    to={navItem.path && navItem.path}
-                    className={navItem.dropdown && 'pos-rel'}
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <div
+                className={cn(
+                  styles['list-item-container'],
+                  styles['reset'],
+                )}
+              >
+                <Link to="/home">
+                  <div className={cn(styles['main-icon'])}>
+                    <TwitterIcon />
+                  </div>
+                </Link>
+              </div>
+            </li>
+            {navItems.map((navItem, index) => {
+              return (
+                <li key={index}>
+                  <div
+                    className={cn(
+                      styles['list-item-container'],
+                      index === activeIcon
+                        ? styles['active-item']
+                        : null,
+                    )}
                   >
-                    <div className={styles['icon']}>
-                      {index === activeIcon
-                        ? navItem.activeIcon
-                        : navItem.icon}
-                    </div>
+                    <Link
+                      onClick={() => {
+                        setActiveIcon(index);
+                        navItem.onClick && navItem.onClick();
+                      }}
+                      to={navItem.path && navItem.path}
+                      className={navItem.dropdown && 'pos-rel'}
+                    >
+                      <div className={styles['icon']}>
+                        {index === activeIcon
+                          ? navItem.activeIcon
+                          : navItem.icon}
+                      </div>
 
-                    <div className={styles['title']}>
-                      {navItem.title}
-                    </div>
+                      <div className={styles['title']}>
+                        {navItem.title}
+                      </div>
 
-                    {navItem.dropdown && navItem.dropdown}
-                  </Link>
-                </div>
-              </li>
-            );
-          })}
+                      {navItem.dropdown && navItem.dropdown}
+                    </Link>
+                  </div>
+                </li>
+              );
+            })}
 
-          <li>
-            <Link>
-              <button>
-                <span>Tweet</span>
+            <li>
+              <Link>
+                <button>
+                  <span>Tweet</span>
 
-                <div className={styles['feather']}>
-                  <GiFeather />
-                </div>
-              </button>
-            </Link>
-          </li>
-        </ul>
+                  <div className={styles['feather']}>
+                    <GiFeather />
+                  </div>
+                </button>
+              </Link>
+            </li>
+          </ul>
 
-        <div
-          onClick={() => setAccountDropdown(!accountDropdown)}
-          className={cn(styles['account'], 'pos-rel')}
-        >
-          <Dropdown
-            classNames="w300"
-            items={[
-              {
-                img: '/assets/img/ruzgar.JPG',
-                title: '@RuzgarAtaOzkan',
-              },
-              {
-                title: 'Add an existing account',
-                divider: true,
-              },
-              {
-                title: 'Log out @RuzgarAtaOzkan',
-                divider: true,
-              },
-            ]}
-            active={accountDropdown}
-            setActive={setAccountDropdown}
-            pos="reverse-bottom"
-            arrow
-          />
-          <img
+          <div
             onClick={() => setAccountDropdown(!accountDropdown)}
-            src="/assets/img/ruzgar.JPG"
-          />
-          <div className={styles['info']}>
-            <div className={styles['name']}>$</div>
-            <div className={styles['username']}>@RuzgarAtaOzkan</div>
+            className={cn(styles['account'], 'pos-rel')}
+          >
+            <Dropdown
+              classNames="w300"
+              items={[
+                {
+                  img: '/assets/img/ruzgar.JPG',
+                  title: '@RuzgarAtaOzkan',
+                },
+                {
+                  title: 'Add an existing account',
+                  divider: true,
+                },
+                {
+                  title: 'Log out @RuzgarAtaOzkan',
+                  divider: true,
+                },
+              ]}
+              active={accountDropdown}
+              setActive={setAccountDropdown}
+              pos="reverse-bottom"
+              arrow
+            />
+            <img
+              onClick={() => setAccountDropdown(!accountDropdown)}
+              src="/assets/img/ruzgar.JPG"
+            />
+            <div className={styles['info']}>
+              <div className={styles['name']}>$</div>
+              <div className={styles['username']}>
+                @RuzgarAtaOzkan
+              </div>
+            </div>
+            <div className={styles['more-options']}>
+              <MoreIcon />
+            </div>
           </div>
-          <div className={styles['more-options']}>
-            <MoreIcon />
-          </div>
-        </div>
-      </nav>
+        </nav>
+      </header>
     </>
   );
 }
