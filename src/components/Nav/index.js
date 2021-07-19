@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
+
+// ICONS
 import { GiFeather } from 'react-icons/gi';
 import {
   FaTwitter as TwitterIcon,
@@ -212,8 +214,35 @@ function Nav() {
           </li>
         </ul>
 
-        <div className={styles['account']}>
-          <img src="/assets/img/ruzgar.JPG" />
+        <div
+          onClick={() => setAccountDropdown(!accountDropdown)}
+          className={cn(styles['account'], 'pos-rel')}
+        >
+          <Dropdown
+            classNames="w300"
+            items={[
+              {
+                img: '/assets/img/ruzgar.JPG',
+                title: '@RuzgarAtaOzkan',
+              },
+              {
+                title: 'Add an existing account',
+                divider: true,
+              },
+              {
+                title: 'Log out @RuzgarAtaOzkan',
+                divider: true,
+              },
+            ]}
+            active={accountDropdown}
+            setActive={setAccountDropdown}
+            pos="reverse-bottom"
+            arrow
+          />
+          <img
+            onClick={() => setAccountDropdown(!accountDropdown)}
+            src="/assets/img/ruzgar.JPG"
+          />
           <div className={styles['info']}>
             <div className={styles['name']}>$</div>
             <div className={styles['username']}>@RuzgarAtaOzkan</div>

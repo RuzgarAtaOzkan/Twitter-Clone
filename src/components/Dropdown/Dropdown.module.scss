@@ -12,13 +12,20 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 230px;
     font-size: 1.2rem;
+    width: 230px;
     padding: 1rem 0.4rem 1rem 1rem;
     transition: all 0.2s ease-out;
     color: black;
     font-size: 16px;
     font-weight: 400;
+
+    img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      margin-right: 1rem;
+    }
 
     .title {
       margin: 0 1.4rem;
@@ -28,6 +35,22 @@
   .dropdown-item:hover {
     background-color: rgba($color: #7e7e7e, $alpha: 0.1);
   }
+
+  .arrow {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 40%;
+    bottom: -15%;
+    border: none;
+    color: white;
+    font-size: 2rem;
+
+    @media only screen and (max-width: 1300px) {
+      left: 5%;
+      bottom: -13%;
+    }
+  }
 }
 
 .bottom {
@@ -36,4 +59,8 @@
 
 .top {
   top: 0;
+}
+
+.reverse-bottom {
+  bottom: 120%;
 }

@@ -1,10 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 
+import { RiArrowDropDownFill } from 'react-icons/ri';
+
 // STYLES
 import styles from './Dropdown.module.scss';
 
-function Dropdown({ items, active, setActive }) {
+function Dropdown({
+  items,
+  active,
+  setActive,
+  pos,
+  classNames,
+  arrow,
+}) {
   const [dropdownPos, setDropdownPos] = useState('');
   const dropdownArea = useRef();
 
@@ -32,19 +41,36 @@ function Dropdown({ items, active, setActive }) {
     <>
       <div
         ref={dropdownArea}
-        className={cn(styles['dropdown-area'], styles[dropdownPos])}
+        className={cn(
+          styles['dropdown-area'],
+          styles[dropdownPos],
+          pos && styles[pos],
+        )}
       >
         {items?.map((item, index) => {
           return (
             <React.Fragment key={index}>
               {item.divider && <div className="dd-divider" />}
-              <div className={styles['dropdown-item']}>
-                <div className={styles['icon']}>{item.icon}</div>
-                <div className={styles['title']}>{item.title}</div>
+              <div
+                className={cn(styles['dropdown-item'], classNames)}
+              >
+                {item.icon && (
+                  <div className={styles['icon']}>{item.icon}</div>
+                )}
+
+                {item.img && <img src={item.img} />}
+                <div className={cn(item.icon && styles['title'])}>
+                  {item.title}
+                </div>
               </div>
             </React.Fragment>
           );
         })}
+        {arrow && (
+          <div className={styles['arrow']}>
+            <RiArrowDropDownFill />
+          </div>
+        )}
       </div>
     </>
   ) : null;

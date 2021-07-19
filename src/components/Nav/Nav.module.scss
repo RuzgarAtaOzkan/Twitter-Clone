@@ -164,7 +164,7 @@ nav {
     transition: all 0.2s ease-out;
 
     & > * {
-      margin-right: 0.3rem;
+      margin-right: 0.8rem;
 
       @media only screen and (max-width: 1300px) {
         margin-right: 0;
@@ -179,8 +179,8 @@ nav {
     }
 
     img {
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       object-fit: cover;
       border-radius: 50%;
 
@@ -192,7 +192,7 @@ nav {
     .info {
       margin-right: 0.5rem;
       & > * {
-        font-size: 16px;
+        font-size: 15px;
 
         @media only screen and (max-width: 1300px) {
           margin-right: 0.5rem;
@@ -212,7 +212,7 @@ nav {
 
     .more-options {
       margin-right: 0.5rem;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 400;
       @media only screen and (max-width: 1300px) {
         margin-right: 0.5rem;

@@ -10,6 +10,10 @@ main {
   .dd-divider {
     width: 100%;
     border-top: 1px solid rgba($color: #979797, $alpha: 0.4);
-    margin: 0.3rem 0;
+    margin: 0.1rem 0;
+  }
+
+  .w300 {
+    width: 300px !important;
   }
 }
