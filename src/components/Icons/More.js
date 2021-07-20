@@ -2,8 +2,8 @@
 import React from 'react';
 import { CgMoreO } from 'react-icons/cg';
 
-function Gif({ active }) {
+function More({ active }) {
   return active ? <CgMoreO /> : <CgMoreO />;
 }
 
-export default Gif;
+export default More;

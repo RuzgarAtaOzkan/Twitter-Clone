@@ -1,5 +1,6 @@
 // MODULES
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 // ICONS
 import ImageIcon from '../../Icons/Image';
@@ -14,16 +15,25 @@ import ShareIcon from '../../Icons/Share';
 import WorldIcon from '../../Icons/World';
 import StarIcon from '../../Icons/Star';
 
+// ACTIONS
+import { setSidebar } from '../../../state/global/actions';
+
 // STYLES
 import styles from './Home.module.scss';
 
 function HomeFeed() {
+  const global = useSelector((state) => state.global);
+  const dispatch = useDispatch();
+
   return (
     <>
       <section className={styles['home-feed']}>
         <div className={styles['title']}>
           <div className={styles['profile-container']}>
-            <div className={styles['image']}>
+            <div
+              onClick={() => dispatch(setSidebar(true))}
+              className={styles['image']}
+            >
               <img src="/assets/img/ruzgar.JPG" />
             </div>
             <h1>Home</h1>

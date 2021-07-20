@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
+// MODULES
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
-
-// ICONS
-import { GiFeather } from 'react-icons/gi';
 
 // COMPONENTS
 import Dropdown from '../Dropdown';
@@ -27,6 +25,7 @@ import QuestionMarkIcon from '../Icons/QuestionMark';
 import BrushIcon from '../Icons/Brush';
 import TwitterIcon from '../Icons/Twitter';
 import AdsIcon from '../Icons/Ads';
+import FeatherIcon from '../Icons/Feather';
 
 // STYLES
 import styles from './Nav.module.scss';
@@ -192,7 +191,7 @@ function Nav() {
                   <span>Tweet</span>
 
                   <div className={styles['feather']}>
-                    <GiFeather />
+                    <FeatherIcon />
                   </div>
                 </button>
               </Link>

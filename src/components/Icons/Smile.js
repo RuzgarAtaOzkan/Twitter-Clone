@@ -2,8 +2,8 @@
 import React from 'react';
 import { FaRegSmile, FaSmile } from 'react-icons/fa';
 
-function Profile({ active }) {
+function Smile({ active }) {
   return active ? <FaSmile /> : <FaRegSmile />;
 }
 
-export default Profile;
+export default Smile;

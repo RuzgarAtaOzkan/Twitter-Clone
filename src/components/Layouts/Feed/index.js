@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import cn from 'classnames';
 
 // COMPONENTS
@@ -14,14 +14,12 @@ function FeedLayout({ exact, path = '/', component }) {
     <Route
       exact={exact}
       path={path}
-      render={(props) => {
+      render={() => {
         return (
-          <main>
-            <div className={cn(styles['default-layout'])}>
-              <Nav />
-              {component}
-              <RecommendationBar />
-            </div>
+          <main className={styles['feed-layout']}>
+            <Nav />
+            {component}
+            <RecommendationBar />
           </main>
         );
       }}

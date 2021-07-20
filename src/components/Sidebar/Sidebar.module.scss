@@ -2,17 +2,19 @@
   display: none;
   background-color: white;
   padding-bottom: 4rem;
+  transition: all 0.2s ease-out;
 
   @media only screen and (max-width: 500px) {
-    display: none;
+    display: block;
     position: fixed;
     top: 0;
-    left: 0;
+    left: -100%;
     width: 80%;
     height: 100%;
     overflow-y: scroll;
     z-index: 11;
   }
+
   .title-area {
     border-bottom: 1px solid rgba($color: #b9b9b9, $alpha: 0.6);
     display: flex;
@@ -122,4 +124,8 @@
       }
     }
   }
+}
+
+.sidebar-active {
+  left: 0%;
 }

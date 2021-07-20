@@ -1,23 +1,21 @@
-main {
-  .default-layout {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 275px 600px 380px;
+.feed-layout {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 275px 600px 380px;
 
-    @media only screen and (max-width: 1300px) {
-      grid-template-columns: 90px 600px 380px;
-    }
+  @media only screen and (max-width: 1300px) {
+    grid-template-columns: 90px 600px 380px;
+  }
 
-    @media only screen and (max-width: 1000px) {
-      grid-template-columns: 90px 600px;
-    }
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: 90px 600px;
+  }
 
-    @media only screen and (max-width: 700px) {
-      grid-template-columns: 15% 85%;
-    }
+  @media only screen and (max-width: 700px) {
+    grid-template-columns: 15% 85%;
+  }
 
-    @media only screen and (max-width: 500px) {
-      grid-template-columns: 100%;
-    }
+  @media only screen and (max-width: 500px) {
+    grid-template-columns: 100%;
   }
 }

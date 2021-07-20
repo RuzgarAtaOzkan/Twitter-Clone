@@ -1,55 +1,81 @@
 // MODULES
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import cn from 'classnames';
 
 // ICONS
-import { GrClose } from 'react-icons/gr';
-import { RiAddCircleLine } from 'react-icons/ri';
-import { BsPersonFill as ActivePersonIcon } from 'react-icons/bs';
-
 import ProfileIcon from '../Icons/Profile';
-import HomeIcon from '../Icons/Home';
+import ListIcon from '../Icons/List';
+import TopicIcon from '../Icons/Topic';
+import BookmarkIcon from '../Icons/Bookmark';
+import BoltIcon from '../Icons/Bolt';
+import ArticleIcon from '../Icons/Article';
+import AdsIcon from '../Icons/Ads';
+import GraphIcon from '../Icons/Graph';
+import SettingsIcon from '../Icons/Settings';
+import QuestionMarkIcon from '../Icons/QuestionMark';
+import PieChartIcon from '../Icons/PieChart';
+import BrushIcon from '../Icons/Brush';
+import CloseIcon from '../Icons/Close';
+import AddIcon from '../Icons/Add';
+
+// DISPATCH ACTIONS
+import { setSidebar } from '../../state/global/actions';
 
 // STYLES
 import styles from './Sidebar.module.scss';
 
 function Sidebar() {
+  const iseSidebarOpen = useSelector(
+    (state) => state.global.isSidebarOpen,
+  );
+
+  const dispatch = useDispatch();
+
   const sidebarItems = [
     { icon: <ProfileIcon />, title: 'Profile' },
-    { icon: <ActivePersonIcon />, title: 'Lists' },
-    { icon: <ActivePersonIcon />, title: 'Topics' },
-    { icon: <ActivePersonIcon />, title: 'Bookmarks' },
-    { icon: <ActivePersonIcon />, title: 'Moments' },
-    { icon: <ActivePersonIcon />, title: 'Newsletters' },
+    { icon: <ListIcon />, title: 'Lists' },
+    { icon: <TopicIcon />, title: 'Topics' },
+    { icon: <BookmarkIcon />, title: 'Bookmarks' },
+    { icon: <BoltIcon />, title: 'Moments' },
+    { icon: <ArticleIcon />, title: 'Newsletters' },
     {
-      icon: <ActivePersonIcon />,
+      icon: <AdsIcon />,
       title: 'Twitter Ads',
       divider: true,
     },
-    { icon: <ActivePersonIcon />, title: 'Analytics' },
+    { icon: <GraphIcon />, title: 'Analytics' },
     {
-      icon: <ActivePersonIcon />,
+      icon: <SettingsIcon />,
       title: 'Settings and privacy',
       divider: true,
     },
-    { icon: <ActivePersonIcon />, title: 'Help Center' },
+    { icon: <QuestionMarkIcon />, title: 'Help Center' },
     {
-      icon: <ActivePersonIcon />,
+      icon: <PieChartIcon />,
       title: 'Data saver',
       divider: true,
     },
-    { icon: <ActivePersonIcon />, title: 'Display' },
-    { icon: <ActivePersonIcon />, title: 'Keyboard shortcuts' },
+    { icon: <BrushIcon />, title: 'Display' },
+    { icon: <BrushIcon />, title: 'Keyboard shortcuts' },
     { title: 'Logout', divider: true },
   ];
 
   return (
     <>
-      <div className={styles['sidebar-area']}>
+      <div
+        className={cn(
+          styles['sidebar-area'],
+          iseSidebarOpen && styles['sidebar-active'],
+        )}
+      >
         <div className={styles['title-area']}>
           <div className={styles['title']}>Account info</div>
-          <div className={styles['icon-area']}>
-            <GrClose />
+          <div
+            onClick={() => dispatch(setSidebar(false))}
+            className={styles['icon-area']}
+          >
+            <CloseIcon />
           </div>
         </div>
 
@@ -59,7 +85,7 @@ function Sidebar() {
               <img src="/assets/img/ruzgar.JPG" />
             </div>
             <div className={styles['add-profile-icon-area']}>
-              <RiAddCircleLine />
+              <AddIcon />
             </div>
           </div>
 
