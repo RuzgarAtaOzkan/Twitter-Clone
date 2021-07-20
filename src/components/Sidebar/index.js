@@ -5,61 +5,17 @@ import cn from 'classnames';
 // ICONS
 import { GrClose } from 'react-icons/gr';
 import { RiAddCircleLine } from 'react-icons/ri';
-import { GiJusticeStar } from 'react-icons/gi';
-import { BiWorld } from 'react-icons/bi';
-import { ImFilePicture } from 'react-icons/im';
-import { AiOutlineFileGif } from 'react-icons/ai';
-import { ImParagraphLeft } from 'react-icons/im';
-import { CgSmile } from 'react-icons/cg';
-import { BiCalendar } from 'react-icons/bi';
-import { FiMessageCircle } from 'react-icons/fi';
-import { BiRecycle } from 'react-icons/bi';
-import { AiOutlineHeart } from 'react-icons/ai';
-import { FiDownload } from 'react-icons/fi';
-import { GiFeather } from 'react-icons/gi';
-import {
-  FaTwitter as TwitterIcon,
-  FaHashtag as ActiveHashtagIcon,
-} from 'react-icons/fa';
-import { BiHomeCircle as HomeIcon } from 'react-icons/bi';
-import { RiHome7Fill as ActiveHomeIcon } from 'react-icons/ri';
-import {
-  BsBell as BellIcon,
-  BsBellFill as ActiveBellIcon,
-} from 'react-icons/bs';
-
-import {
-  MdMailOutline as MailIcon,
-  MdEmail as ActiveMailIcon,
-} from 'react-icons/md';
-
-import {
-  BsFillBookmarkFill as ActiveBookmarkIcon,
-  BsBookmark as BookmarkIcon,
-} from 'react-icons/bs';
-
-import {
-  RiFileList2Line as ListIcon,
-  RiFileList2Fill as ActiveListIcon,
-} from 'react-icons/ri';
-import { IoPersonOutline as PersonIcon } from 'react-icons/io';
 import { BsPersonFill as ActivePersonIcon } from 'react-icons/bs';
-import { CgMoreO as MoreIcon } from 'react-icons/cg';
-import { HiOutlineLightningBolt } from 'react-icons/hi';
-import { BiConversation } from 'react-icons/bi';
-import { GrArticle } from 'react-icons/gr';
-import { RiAdvertisementLine, RiBrushLine } from 'react-icons/ri';
-import { GoGraph } from 'react-icons/go';
-import { IoSettingsOutline } from 'react-icons/io';
-import { BsQuestionCircle } from 'react-icons/bs';
-import { FiSettings } from 'react-icons/fi';
+
+import ProfileIcon from '../Icons/Profile';
+import HomeIcon from '../Icons/Home';
 
 // STYLES
 import styles from './Sidebar.module.scss';
 
 function Sidebar() {
   const sidebarItems = [
-    { icon: <ActivePersonIcon />, title: 'Profile' },
+    { icon: <ProfileIcon />, title: 'Profile' },
     { icon: <ActivePersonIcon />, title: 'Lists' },
     { icon: <ActivePersonIcon />, title: 'Topics' },
     { icon: <ActivePersonIcon />, title: 'Bookmarks' },
@@ -135,7 +91,6 @@ function Sidebar() {
                       </div>
                     )}
 
-                    {item.img && <img src={item.img} />}
                     <div className={cn(item.icon && styles['title'])}>
                       {item.title}
                     </div>

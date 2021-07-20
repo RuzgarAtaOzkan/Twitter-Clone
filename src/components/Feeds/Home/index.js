@@ -1,17 +1,18 @@
+// MODULES
 import React from 'react';
 
 // ICONS
-import { GiJusticeStar } from 'react-icons/gi';
-import { BiWorld } from 'react-icons/bi';
-import { ImFilePicture } from 'react-icons/im';
-import { AiOutlineFileGif } from 'react-icons/ai';
-import { ImParagraphLeft } from 'react-icons/im';
-import { CgSmile } from 'react-icons/cg';
-import { BiCalendar } from 'react-icons/bi';
-import { FiMessageCircle } from 'react-icons/fi';
-import { BiRecycle } from 'react-icons/bi';
-import { AiOutlineHeart } from 'react-icons/ai';
-import { FiDownload } from 'react-icons/fi';
+import ImageIcon from '../../Icons/Image';
+import GifIcon from '../../Icons/Gif';
+import GraphIcon from '../../Icons/Graph';
+import SmileIcon from '../../Icons/Smile';
+import CalendarIcon from '../../Icons/Calendar';
+import MessageIcon from '../../Icons/Message';
+import RetweetIcon from '../../Icons/Retweet';
+import HeartIcon from '../../Icons/Heart';
+import ShareIcon from '../../Icons/Share';
+import WorldIcon from '../../Icons/World';
+import StarIcon from '../../Icons/Star';
 
 // STYLES
 import styles from './Home.module.scss';
@@ -28,7 +29,7 @@ function HomeFeed() {
             <h1>Home</h1>
           </div>
           <div className={styles['title-icon']}>
-            <GiJusticeStar />
+            <StarIcon />
           </div>
         </div>
 
@@ -43,7 +44,7 @@ function HomeFeed() {
             <div className={styles['reply-options-area']}>
               <div className={styles['reply-options']}>
                 <div className={styles['reply-icon']}>
-                  <BiWorld />
+                  <WorldIcon />
                 </div>
 
                 <div className={styles['reply-title']}>
@@ -55,20 +56,20 @@ function HomeFeed() {
             <div className={styles['tweet-buttons']}>
               <div className={styles['media-buttons']}>
                 <div>
-                  <ImFilePicture />
+                  <ImageIcon />
                 </div>
 
                 <div>
-                  <AiOutlineFileGif />
+                  <GifIcon />
                 </div>
                 <div>
-                  <ImParagraphLeft />
+                  <GraphIcon />
                 </div>
                 <div>
-                  <CgSmile />
+                  <SmileIcon />
                 </div>
                 <div>
-                  <BiCalendar />
+                  <CalendarIcon />
                 </div>
               </div>
 
@@ -106,424 +107,19 @@ function HomeFeed() {
 
               <div className={styles['tweet-options']}>
                 <div className={styles['tweet-option']}>
-                  <FiMessageCircle />
+                  <MessageIcon />
                   <span>53</span>
                 </div>
                 <div className={styles['tweet-option']}>
-                  <BiRecycle />
+                  <RetweetIcon />
                   <span>12</span>
                 </div>
                 <div className={styles['tweet-option']}>
-                  <AiOutlineHeart />
+                  <HeartIcon />
                   <span>32</span>
                 </div>
                 <div className={styles['tweet-option']}>
-                  <FiDownload />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles['post']}>
-            <div className={styles['left-side']}>
-              <img src="/assets/img/ruzgar.JPG" />
-            </div>
-            <div className={styles['right-side']}>
-              <div className={styles['info']}>
-                <div className={styles['name']}>Ruzgar Ata Ozkan</div>
-                <div className={styles['username']}>
-                  @RuzgarAtaOzkan
-                </div>
-                .<div className={styles['time']}>14m</div>
-              </div>
-
-              <div className={styles['content']}>
-                Kudos to SEC Commissioners Peirce and Roisman for
-                speaking up the truth! Peirce & Roisman obviously knew
-                beforehand that Ripple would take their letter to the
-                Courts. —They are corageously standing vs. the
-                "regulate-by-enforcement" policy pushed by the other
-                three commissioners.
-              </div>
-
-              <div className={styles['media']}>
-                <img />
-              </div>
-
-              <div className={styles['tweet-options']}>
-                <div className={styles['tweet-option']}>
-                  <FiMessageCircle />
-                  <span>53</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <BiRecycle />
-                  <span>12</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <AiOutlineHeart />
-                  <span>32</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <FiDownload />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles['post']}>
-            <div className={styles['left-side']}>
-              <img src="/assets/img/ruzgar.JPG" />
-            </div>
-            <div className={styles['right-side']}>
-              <div className={styles['info']}>
-                <div className={styles['name']}>Ruzgar Ata Ozkan</div>
-                <div className={styles['username']}>
-                  @RuzgarAtaOzkan
-                </div>
-                .<div className={styles['time']}>14m</div>
-              </div>
-
-              <div className={styles['content']}>
-                Kudos to SEC Commissioners Peirce and Roisman for
-                speaking up the truth! Peirce & Roisman obviously knew
-                beforehand that Ripple would take their letter to the
-                Courts. —They are corageously standing vs. the
-                "regulate-by-enforcement" policy pushed by the other
-                three commissioners.
-              </div>
-
-              <div className={styles['media']}>
-                <img />
-              </div>
-
-              <div className={styles['tweet-options']}>
-                <div className={styles['tweet-option']}>
-                  <FiMessageCircle />
-                  <span>53</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <BiRecycle />
-                  <span>12</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <AiOutlineHeart />
-                  <span>32</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <FiDownload />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles['post']}>
-            <div className={styles['left-side']}>
-              <img src="/assets/img/ruzgar.JPG" />
-            </div>
-            <div className={styles['right-side']}>
-              <div className={styles['info']}>
-                <div className={styles['name']}>Ruzgar Ata Ozkan</div>
-                <div className={styles['username']}>
-                  @RuzgarAtaOzkan
-                </div>
-                .<div className={styles['time']}>14m</div>
-              </div>
-
-              <div className={styles['content']}>
-                Kudos to SEC Commissioners Peirce and Roisman for
-                speaking up the truth! Peirce & Roisman obviously knew
-                beforehand that Ripple would take their letter to the
-                Courts. —They are corageously standing vs. the
-                "regulate-by-enforcement" policy pushed by the other
-                three commissioners.
-              </div>
-
-              <div className={styles['media']}>
-                <img />
-              </div>
-
-              <div className={styles['tweet-options']}>
-                <div className={styles['tweet-option']}>
-                  <FiMessageCircle />
-                  <span>53</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <BiRecycle />
-                  <span>12</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <AiOutlineHeart />
-                  <span>32</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <FiDownload />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles['post']}>
-            <div className={styles['left-side']}>
-              <img src="/assets/img/ruzgar.JPG" />
-            </div>
-            <div className={styles['right-side']}>
-              <div className={styles['info']}>
-                <div className={styles['name']}>Ruzgar Ata Ozkan</div>
-                <div className={styles['username']}>
-                  @RuzgarAtaOzkan
-                </div>
-                .<div className={styles['time']}>14m</div>
-              </div>
-
-              <div className={styles['content']}>
-                Kudos to SEC Commissioners Peirce and Roisman for
-                speaking up the truth! Peirce & Roisman obviously knew
-                beforehand that Ripple would take their letter to the
-                Courts. —They are corageously standing vs. the
-                "regulate-by-enforcement" policy pushed by the other
-                three commissioners.
-              </div>
-
-              <div className={styles['media']}>
-                <img />
-              </div>
-
-              <div className={styles['tweet-options']}>
-                <div className={styles['tweet-option']}>
-                  <FiMessageCircle />
-                  <span>53</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <BiRecycle />
-                  <span>12</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <AiOutlineHeart />
-                  <span>32</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <FiDownload />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles['post']}>
-            <div className={styles['left-side']}>
-              <img src="/assets/img/ruzgar.JPG" />
-            </div>
-            <div className={styles['right-side']}>
-              <div className={styles['info']}>
-                <div className={styles['name']}>Ruzgar Ata Ozkan</div>
-                <div className={styles['username']}>
-                  @RuzgarAtaOzkan
-                </div>
-                .<div className={styles['time']}>14m</div>
-              </div>
-
-              <div className={styles['content']}>
-                Kudos to SEC Commissioners Peirce and Roisman for
-                speaking up the truth! Peirce & Roisman obviously knew
-                beforehand that Ripple would take their letter to the
-                Courts. —They are corageously standing vs. the
-                "regulate-by-enforcement" policy pushed by the other
-                three commissioners.
-              </div>
-
-              <div className={styles['media']}>
-                <img />
-              </div>
-
-              <div className={styles['tweet-options']}>
-                <div className={styles['tweet-option']}>
-                  <FiMessageCircle />
-                  <span>53</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <BiRecycle />
-                  <span>12</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <AiOutlineHeart />
-                  <span>32</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <FiDownload />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles['post']}>
-            <div className={styles['left-side']}>
-              <img src="/assets/img/ruzgar.JPG" />
-            </div>
-            <div className={styles['right-side']}>
-              <div className={styles['info']}>
-                <div className={styles['name']}>Ruzgar Ata Ozkan</div>
-                <div className={styles['username']}>
-                  @RuzgarAtaOzkan
-                </div>
-                .<div className={styles['time']}>14m</div>
-              </div>
-
-              <div className={styles['content']}>
-                Kudos to SEC Commissioners Peirce and Roisman for
-                speaking up the truth! Peirce & Roisman obviously knew
-                beforehand that Ripple would take their letter to the
-                Courts. —They are corageously standing vs. the
-                "regulate-by-enforcement" policy pushed by the other
-                three commissioners.
-              </div>
-
-              <div className={styles['media']}>
-                <img />
-              </div>
-
-              <div className={styles['tweet-options']}>
-                <div className={styles['tweet-option']}>
-                  <FiMessageCircle />
-                  <span>53</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <BiRecycle />
-                  <span>12</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <AiOutlineHeart />
-                  <span>32</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <FiDownload />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles['post']}>
-            <div className={styles['left-side']}>
-              <img src="/assets/img/ruzgar.JPG" />
-            </div>
-            <div className={styles['right-side']}>
-              <div className={styles['info']}>
-                <div className={styles['name']}>Ruzgar Ata Ozkan</div>
-                <div className={styles['username']}>
-                  @RuzgarAtaOzkan
-                </div>
-                .<div className={styles['time']}>14m</div>
-              </div>
-
-              <div className={styles['content']}>
-                Kudos to SEC Commissioners Peirce and Roisman for
-                speaking up the truth! Peirce & Roisman obviously knew
-                beforehand that Ripple would take their letter to the
-                Courts. —They are corageously standing vs. the
-                "regulate-by-enforcement" policy pushed by the other
-                three commissioners.
-              </div>
-
-              <div className={styles['media']}>
-                <img />
-              </div>
-
-              <div className={styles['tweet-options']}>
-                <div className={styles['tweet-option']}>
-                  <FiMessageCircle />
-                  <span>53</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <BiRecycle />
-                  <span>12</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <AiOutlineHeart />
-                  <span>32</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <FiDownload />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles['post']}>
-            <div className={styles['left-side']}>
-              <img src="/assets/img/ruzgar.JPG" />
-            </div>
-            <div className={styles['right-side']}>
-              <div className={styles['info']}>
-                <div className={styles['name']}>Ruzgar Ata Ozkan</div>
-                <div className={styles['username']}>
-                  @RuzgarAtaOzkan
-                </div>
-                .<div className={styles['time']}>14m</div>
-              </div>
-
-              <div className={styles['content']}>
-                Kudos to SEC Commissioners Peirce and Roisman for
-                speaking up the truth! Peirce & Roisman obviously knew
-                beforehand that Ripple would take their letter to the
-                Courts. —They are corageously standing vs. the
-                "regulate-by-enforcement" policy pushed by the other
-                three commissioners.
-              </div>
-
-              <div className={styles['media']}>
-                <img />
-              </div>
-
-              <div className={styles['tweet-options']}>
-                <div className={styles['tweet-option']}>
-                  <FiMessageCircle />
-                  <span>53</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <BiRecycle />
-                  <span>12</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <AiOutlineHeart />
-                  <span>32</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <FiDownload />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles['post']}>
-            <div className={styles['left-side']}>
-              <img src="/assets/img/ruzgar.JPG" />
-            </div>
-            <div className={styles['right-side']}>
-              <div className={styles['info']}>
-                <div className={styles['name']}>Ruzgar Ata Ozkan</div>
-                <div className={styles['username']}>
-                  @RuzgarAtaOzkan
-                </div>
-                .<div className={styles['time']}>14m</div>
-              </div>
-
-              <div className={styles['content']}>
-                Kudos to SEC Commissioners Peirce and Roisman for
-                speaking up the truth! Peirce & Roisman obviously knew
-                beforehand that Ripple would take their letter to the
-                Courts. —They are corageously standing vs. the
-                "regulate-by-enforcement" policy pushed by the other
-                three commissioners.
-              </div>
-
-              <div className={styles['media']}>
-                <img />
-              </div>
-
-              <div className={styles['tweet-options']}>
-                <div className={styles['tweet-option']}>
-                  <FiMessageCircle />
-                  <span>53</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <BiRecycle />
-                  <span>12</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <AiOutlineHeart />
-                  <span>32</span>
-                </div>
-                <div className={styles['tweet-option']}>
-                  <FiDownload />
+                  <ShareIcon />
                 </div>
               </div>
             </div>

@@ -4,46 +4,29 @@ import cn from 'classnames';
 
 // ICONS
 import { GiFeather } from 'react-icons/gi';
-import {
-  FaTwitter as TwitterIcon,
-  FaHashtag as ActiveHashtagIcon,
-} from 'react-icons/fa';
-import { BiHomeCircle as HomeIcon } from 'react-icons/bi';
-import { RiHome7Fill as ActiveHomeIcon } from 'react-icons/ri';
-import {
-  BsBell as BellIcon,
-  BsBellFill as ActiveBellIcon,
-} from 'react-icons/bs';
-
-import {
-  MdMailOutline as MailIcon,
-  MdEmail as ActiveMailIcon,
-} from 'react-icons/md';
-
-import {
-  BsFillBookmarkFill as ActiveBookmarkIcon,
-  BsBookmark as BookmarkIcon,
-} from 'react-icons/bs';
-
-import {
-  RiFileList2Line as ListIcon,
-  RiFileList2Fill as ActiveListIcon,
-} from 'react-icons/ri';
-import { IoPersonOutline as PersonIcon } from 'react-icons/io';
-import { BsPersonFill as ActivePersonIcon } from 'react-icons/bs';
-import { CgMoreO as MoreIcon } from 'react-icons/cg';
-import { HiOutlineLightningBolt } from 'react-icons/hi';
-import { BiConversation } from 'react-icons/bi';
-import { GrArticle } from 'react-icons/gr';
-import { RiAdvertisementLine, RiBrushLine } from 'react-icons/ri';
-import { GoGraph } from 'react-icons/go';
-import { IoSettingsOutline } from 'react-icons/io';
-import { BsQuestionCircle } from 'react-icons/bs';
-import { FiSettings } from 'react-icons/fi';
 
 // COMPONENTS
 import Dropdown from '../Dropdown';
 import Sidebar from '../Sidebar';
+
+// ICONS
+import HomeIcon from '../Icons/Home';
+import HashtagIcon from '../Icons/Hashtag';
+import BellIcon from '../Icons/Bell';
+import MailIcon from '../Icons/Mail';
+import BookmarkIcon from '../Icons/Bookmark';
+import ListIcon from '../Icons/List';
+import ProfileIcon from '../Icons/Profile';
+import MoreIcon from '../Icons/More';
+import ConversationIcon from '../Icons/Conversation';
+import BoltIcon from '../Icons/Bolt';
+import ArticleIcon from '../Icons/Article';
+import GraphIcon from '../Icons/Graph';
+import SettingsIcon from '../Icons/Settings';
+import QuestionMarkIcon from '../Icons/QuestionMark';
+import BrushIcon from '../Icons/Brush';
+import TwitterIcon from '../Icons/Twitter';
+import AdsIcon from '../Icons/Ads';
 
 // STYLES
 import styles from './Nav.module.scss';
@@ -56,44 +39,44 @@ function Nav() {
 
   const navItems = [
     {
-      activeIcon: <ActiveHomeIcon />,
+      activeIcon: <HomeIcon active />,
       icon: <HomeIcon />,
       title: 'Home',
       path: '/home',
     },
     {
-      activeIcon: <ActiveHashtagIcon />,
-      icon: <ActiveHashtagIcon />,
+      activeIcon: <HashtagIcon active />,
+      icon: <HashtagIcon />,
       title: 'Explore',
       path: '/explore',
     },
     {
-      activeIcon: <ActiveBellIcon />,
+      activeIcon: <BellIcon active />,
       icon: <BellIcon />,
       title: 'Notifications',
       path: '/notifications',
     },
     {
-      activeIcon: <ActiveMailIcon />,
+      activeIcon: <MailIcon active />,
       icon: <MailIcon />,
       title: 'Messages',
       path: '/messages',
     },
     {
-      activeIcon: <ActiveBookmarkIcon />,
+      activeIcon: <BookmarkIcon active />,
       icon: <BookmarkIcon />,
       title: 'Bookmarks',
       path: '/bookmarks',
     },
     {
-      activeIcon: <ActiveListIcon />,
+      activeIcon: <ListIcon active />,
       icon: <ListIcon />,
       title: 'Lists',
       path: '/lists',
     },
     {
-      activeIcon: <ActiveHomeIcon />,
-      icon: <ActivePersonIcon />,
+      activeIcon: <ProfileIcon active />,
+      icon: <ProfileIcon />,
       title: 'Profile',
       path: '/profile',
     },
@@ -102,36 +85,36 @@ function Nav() {
         <Dropdown
           items={[
             {
-              icon: <BiConversation />,
+              icon: <ConversationIcon />,
               title: 'Topics',
             },
             {
-              icon: <HiOutlineLightningBolt />,
+              icon: <BoltIcon />,
               title: 'Moments',
             },
             {
-              icon: <GrArticle />,
+              icon: <ArticleIcon />,
               title: 'Newsletters',
             },
             {
-              icon: <RiAdvertisementLine />,
+              icon: <AdsIcon />,
               title: 'Twitter Ads',
             },
             {
-              icon: <GoGraph />,
+              icon: <GraphIcon />,
               title: 'Analytics',
             },
             {
-              icon: <FiSettings />,
+              icon: <SettingsIcon />,
               title: 'Settings and Privacy',
               divider: true,
             },
             {
-              icon: <BsQuestionCircle />,
+              icon: <QuestionMarkIcon />,
               title: 'Help Center',
             },
             {
-              icon: <RiBrushLine />,
+              icon: <BrushIcon />,
               title: 'Display',
             },
           ]}
@@ -139,7 +122,7 @@ function Nav() {
           setActive={setMoreOptionsDropdown}
         />
       ),
-      activeIcon: <MoreIcon />,
+      activeIcon: <MoreIcon active />,
       icon: <MoreIcon />,
       title: 'More',
       onClick: () => {

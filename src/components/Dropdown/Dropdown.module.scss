@@ -12,13 +12,17 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: 1.2rem;
     width: 230px;
     padding: 1rem 0.4rem 1rem 1rem;
     transition: all 0.2s ease-out;
     color: black;
-    font-size: 16px;
     font-weight: 400;
+    color: rgba($color: #000000, $alpha: 0.9);
+
+    .icon {
+      font-size: 20px;
+      color: rgba($color: #000000, $alpha: 0.7);
+    }
 
     img {
       width: 40px;
@@ -28,7 +32,8 @@
     }
 
     .title {
-      margin: 0 1.4rem;
+      margin: 0 0 0 1rem;
+      font-size: 15px;
     }
   }
 
