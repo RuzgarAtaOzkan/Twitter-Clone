@@ -4,7 +4,7 @@ import React from 'react';
 // COMPONENTS
 import HomeFeed from '../components/Feeds/Home';
 
-function HomePage() {
+function Home() {
   return (
     <>
       <HomeFeed />
@@ -12,4 +12,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Home;

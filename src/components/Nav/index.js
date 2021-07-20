@@ -43,6 +43,7 @@ import { FiSettings } from 'react-icons/fi';
 
 // COMPONENTS
 import Dropdown from '../Dropdown';
+import Sidebar from '../Sidebar';
 
 // STYLES
 import styles from './Nav.module.scss';
@@ -256,6 +257,8 @@ function Nav() {
           </div>
         </nav>
       </header>
+
+      <Sidebar />
     </>
   );
 }

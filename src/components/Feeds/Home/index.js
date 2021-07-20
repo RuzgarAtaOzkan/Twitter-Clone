@@ -21,7 +21,12 @@ function HomeFeed() {
     <>
       <section className={styles['home-feed']}>
         <div className={styles['title']}>
-          <h1>Home</h1>
+          <div className={styles['profile-container']}>
+            <div className={styles['image']}>
+              <img src="/assets/img/ruzgar.JPG" />
+            </div>
+            <h1>Home</h1>
+          </div>
           <div className={styles['title-icon']}>
             <GiJusticeStar />
           </div>

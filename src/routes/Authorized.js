@@ -19,6 +19,7 @@ function AuthorizedRoutes() {
         <Router>
           <Switch>
             <FeedLayout path="/home" component={<HomePage />} />
+            <FeedLayout path="/explore" component={<HomePage />} />
           </Switch>
         </Router>
       </Suspense>

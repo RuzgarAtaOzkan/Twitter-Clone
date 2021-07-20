@@ -18,6 +18,37 @@
     top: 0;
     margin-bottom: 0rem;
 
+    @media only screen and (max-width: 500px) {
+      position: fixed;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .profile-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .image {
+        display: none;
+        cursor: pointer;
+        margin-right: 1rem;
+
+        @media only screen and (max-width: 500px) {
+          display: block;
+        }
+        img {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+
+      h2 {
+        font-weight: bold;
+      }
+    }
+
     .title-icon {
       font-size: 1.3rem;
       color: #1da1f2;
@@ -31,6 +62,10 @@
     align-items: flex-start;
     padding: 0.8rem;
     margin-bottom: 0.7rem;
+
+    @media only screen and (max-width: 500px) {
+      display: none;
+    }
 
     .left-side {
       img {
@@ -127,6 +162,9 @@
   }
 
   .posts-area {
+    @media only screen and (max-width: 500px) {
+      margin-top: 4.4rem;
+    }
     .post {
       border-bottom: 1px solid rgba($color: #949494, $alpha: 0.4);
       background-color: white;
@@ -183,11 +221,15 @@
           justify-content: flex-start;
           align-items: center;
           .tweet-option {
-            margin-right: 6rem;
+            margin-right: 17%;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
+
+            @media only screen and (max-width: 500px) {
+              margin-right: 10%;
+            }
 
             svg {
               font-size: 1.3rem;
