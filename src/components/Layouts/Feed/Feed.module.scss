@@ -2,10 +2,14 @@ main {
   .default-layout {
     display: grid;
     justify-content: center;
-    grid-template-columns: 275px 600px 350px;
+    grid-template-columns: 275px 600px 380px;
 
     @media only screen and (max-width: 1300px) {
-      grid-template-columns: 90px 600px 350px;
+      grid-template-columns: 90px 600px 380px;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      grid-template-columns: 90px 600px;
     }
   }
 }

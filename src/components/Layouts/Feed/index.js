@@ -4,11 +4,12 @@ import cn from 'classnames';
 
 // COMPONENTS
 import Nav from '../../Nav';
+import RecommendationBar from '../../RecommendationBar';
 
 // STYLES
 import styles from './Feed.module.scss';
 
-function FeedLayout({ exact, path = '/', component: Component }) {
+function FeedLayout({ exact, path = '/', component }) {
   return (
     <Route
       exact={exact}
@@ -18,7 +19,8 @@ function FeedLayout({ exact, path = '/', component: Component }) {
           <main>
             <div className={cn(styles['default-layout'])}>
               <Nav />
-              <Component {...props} />
+              {component}
+              <RecommendationBar />
             </div>
           </main>
         );

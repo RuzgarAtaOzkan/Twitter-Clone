@@ -18,7 +18,7 @@ function AuthorizedRoutes() {
       <Suspense fallback={<div>Loading...</div>}>
         <Router>
           <Switch>
-            <FeedLayout path="/home" component={HomePage} />
+            <FeedLayout path="/home" component={<HomePage />} />
           </Switch>
         </Router>
       </Suspense>
