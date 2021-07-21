@@ -5,6 +5,7 @@ import cn from 'classnames';
 // COMPONENTS
 import Nav from '../../Nav';
 import RecommendationBar from '../../RecommendationBar';
+import BottomBar from '../../Nav/BottomBar';
 
 // STYLES
 import styles from './Feed.module.scss';
@@ -20,6 +21,7 @@ function FeedLayout({ exact, path = '/', component }) {
             <Nav />
             {component}
             <RecommendationBar />
+            <BottomBar />
           </main>
         );
       }}

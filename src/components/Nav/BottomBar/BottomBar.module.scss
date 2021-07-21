@@ -1,0 +1,31 @@
+nav {
+  .bottom-bar-area {
+    border-top: 1px solid rgb(231, 234, 235);
+    display: none;
+    background-color: white;
+    position: fixed;
+    justify-content: space-around;
+    align-items: center;
+    bottom: 0;
+    padding: 10px 0;
+    z-index: 12;
+    width: 100%;
+
+    @media only screen and (max-width: 500px) {
+      display: flex;
+    }
+
+    .icon-area {
+      font-size: 1.7rem;
+      svg {
+        color: rgba($color: #000000, $alpha: 0.6);
+      }
+    }
+
+    .active-icon {
+      svg {
+        color: rgba(29, 161, 242, 1);
+      }
+    }
+  }
+}

@@ -200,7 +200,7 @@ function Nav() {
 
           <div
             onClick={() => setAccountDropdown(!accountDropdown)}
-            className={cn(styles['account'], 'pos-rel')}
+            className={cn(styles['account'], 'pos-rel')} // pos-rel = position: relative;
           >
             <Dropdown
               classNames="w300"
