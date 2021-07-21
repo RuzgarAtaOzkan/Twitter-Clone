@@ -25,91 +25,103 @@ function RecommendationBar() {
           </div>
         </div>
 
-        <div className={styles['trends-area']}>
-          <div className={styles['title-area']}>
-            <div className={styles['title']}>Trends for you</div>
+        {window.location.pathname === '/explore' ? null : (
+          <div className={styles['trends-area']}>
+            <div className={styles['title-area']}>
+              <div className={styles['title']}>Trends for you</div>
 
-            <div className={styles['settings-icon']}>
-              <FiSettings />
-            </div>
-          </div>
-
-          <div className={styles['trend-section']}>
-            <div className={styles['category']}>
-              <div className={styles['trend-place']}>
-                Trending in Turkey
-              </div>
-
-              <div className={styles['trend-settings']}>
-                <MoreIcon />
+              <div className={styles['settings-icon']}>
+                <FiSettings />
               </div>
             </div>
 
-            <div className={styles['trend-name']}>#acunilicali</div>
-            <div className={styles['trend-count']}>37.9K Tweets</div>
-          </div>
+            <div className={styles['trend-section']}>
+              <div className={styles['category']}>
+                <div className={styles['trend-place']}>
+                  Trending in Turkey
+                </div>
 
-          <div className={styles['trend-section']}>
-            <div className={styles['category']}>
-              <div className={styles['trend-place']}>
-                Trending in Turkey
+                <div className={styles['trend-settings']}>
+                  <MoreIcon />
+                </div>
               </div>
 
-              <div className={styles['trend-settings']}>
-                <MoreIcon />
-              </div>
-            </div>
-
-            <div className={styles['trend-name']}>S-400</div>
-            <div className={styles['trend-count']}>37.9K Tweets</div>
-          </div>
-          <div className={styles['trend-section']}>
-            <div className={styles['category']}>
-              <div className={styles['trend-place']}>
-                Trending in Turkey
-              </div>
-
-              <div className={styles['trend-settings']}>
-                <MoreIcon />
+              <div className={styles['trend-name']}>#acunilicali</div>
+              <div className={styles['trend-count']}>
+                37.9K Tweets
               </div>
             </div>
 
-            <div className={styles['trend-name']}>Software</div>
-            <div className={styles['trend-count']}>37.9K Tweets</div>
-          </div>
-          <div className={styles['trend-section']}>
-            <div className={styles['category']}>
-              <div className={styles['trend-place']}>
-                Trending in Turkey
+            <div className={styles['trend-section']}>
+              <div className={styles['category']}>
+                <div className={styles['trend-place']}>
+                  Trending in Turkey
+                </div>
+
+                <div className={styles['trend-settings']}>
+                  <MoreIcon />
+                </div>
               </div>
 
-              <div className={styles['trend-settings']}>
-                <MoreIcon />
+              <div className={styles['trend-name']}>S-400</div>
+              <div className={styles['trend-count']}>
+                37.9K Tweets
+              </div>
+            </div>
+            <div className={styles['trend-section']}>
+              <div className={styles['category']}>
+                <div className={styles['trend-place']}>
+                  Trending in Turkey
+                </div>
+
+                <div className={styles['trend-settings']}>
+                  <MoreIcon />
+                </div>
+              </div>
+
+              <div className={styles['trend-name']}>Software</div>
+              <div className={styles['trend-count']}>
+                37.9K Tweets
+              </div>
+            </div>
+            <div className={styles['trend-section']}>
+              <div className={styles['category']}>
+                <div className={styles['trend-place']}>
+                  Trending in Turkey
+                </div>
+
+                <div className={styles['trend-settings']}>
+                  <MoreIcon />
+                </div>
+              </div>
+
+              <div className={styles['trend-name']}>#development</div>
+              <div className={styles['trend-count']}>
+                37.9K Tweets
+              </div>
+            </div>
+            <div className={styles['trend-section']}>
+              <div className={styles['category']}>
+                <div className={styles['trend-place']}>
+                  Trending in Turkey
+                </div>
+
+                <div className={styles['trend-settings']}>
+                  <MoreIcon />
+                </div>
+              </div>
+
+              <div className={styles['trend-name']}>#acunilicali</div>
+              <div className={styles['trend-count']}>
+                37.9K Tweets
               </div>
             </div>
 
-            <div className={styles['trend-name']}>#development</div>
-            <div className={styles['trend-count']}>37.9K Tweets</div>
-          </div>
-          <div className={styles['trend-section']}>
-            <div className={styles['category']}>
-              <div className={styles['trend-place']}>
-                Trending in Turkey
-              </div>
-
-              <div className={styles['trend-settings']}>
-                <MoreIcon />
-              </div>
+            <div className={styles['show-more']}>
+              <Link>Show more</Link>
             </div>
-
-            <div className={styles['trend-name']}>#acunilicali</div>
-            <div className={styles['trend-count']}>37.9K Tweets</div>
           </div>
-
-          <div className={styles['show-more']}>
-            <Link>Show more</Link>
-          </div>
-        </div>
+        )}
 
         <div className={styles['sticky-area']}>
           <div className={styles['follow-area']}>

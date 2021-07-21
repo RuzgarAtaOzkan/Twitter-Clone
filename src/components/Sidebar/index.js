@@ -1,5 +1,6 @@
 // MODULES
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import cn from 'classnames';
 
@@ -33,32 +34,43 @@ function Sidebar() {
   const dispatch = useDispatch();
 
   const sidebarItems = [
-    { icon: <ProfileIcon />, title: 'Profile' },
-    { icon: <ListIcon />, title: 'Lists' },
-    { icon: <TopicIcon />, title: 'Topics' },
-    { icon: <BookmarkIcon />, title: 'Bookmarks' },
-    { icon: <BoltIcon />, title: 'Moments' },
-    { icon: <ArticleIcon />, title: 'Newsletters' },
+    { icon: <ProfileIcon />, title: 'Profile', path: '/profile' },
+    { icon: <ListIcon />, title: 'Lists', path: '/profile' },
+    { icon: <TopicIcon />, title: 'Topics', path: '/profile' },
+    { icon: <BookmarkIcon />, title: 'Bookmarks', path: '/profile' },
+    { icon: <BoltIcon />, title: 'Moments', path: '/profile' },
+    { icon: <ArticleIcon />, title: 'Newsletters', path: '/profile' },
     {
       icon: <AdsIcon />,
       title: 'Twitter Ads',
       divider: true,
+      path: '/profile',
     },
-    { icon: <GraphIcon />, title: 'Analytics' },
+    { icon: <GraphIcon />, title: 'Analytics', path: '/profile' },
     {
       icon: <SettingsIcon />,
       title: 'Settings and privacy',
       divider: true,
+      path: '/profile',
     },
-    { icon: <QuestionMarkIcon />, title: 'Help Center' },
+    {
+      icon: <QuestionMarkIcon />,
+      title: 'Help Center',
+      path: '/profile',
+    },
     {
       icon: <PieChartIcon />,
       title: 'Data saver',
       divider: true,
+      path: '/profile',
     },
-    { icon: <BrushIcon />, title: 'Display' },
-    { icon: <BrushIcon />, title: 'Keyboard shortcuts' },
-    { title: 'Logout', divider: true },
+    { icon: <BrushIcon />, title: 'Display', path: '/profile' },
+    {
+      icon: <BrushIcon />,
+      title: 'Keyboard shortcuts',
+      path: '/profile',
+    },
+    { title: 'Logout', divider: true, path: '/profile' },
   ];
 
   return (
@@ -110,17 +122,22 @@ function Sidebar() {
               return (
                 <React.Fragment key={index}>
                   {item.divider && <div className="dd-divider" />}
-                  <div className={cn(styles['sidebar-item'])}>
-                    {item.icon && (
-                      <div className={styles['icon']}>
-                        {item.icon}
-                      </div>
-                    )}
 
-                    <div className={cn(item.icon && styles['title'])}>
-                      {item.title}
+                  <Link to={item.path}>
+                    <div className={cn(styles['sidebar-item'])}>
+                      {item.icon && (
+                        <div className={styles['icon']}>
+                          {item.icon}
+                        </div>
+                      )}
+
+                      <div
+                        className={cn(item.icon && styles['title'])}
+                      >
+                        {item.title}
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </React.Fragment>
               );
             })}

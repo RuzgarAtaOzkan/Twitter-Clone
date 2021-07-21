@@ -2,7 +2,7 @@
 import React from 'react';
 
 // COMPONENTS
-import ExploreFeed from '../components/Feeds/Home';
+import ExploreFeed from '../components/Feeds/Explore';
 
 function Explore() {
   return (

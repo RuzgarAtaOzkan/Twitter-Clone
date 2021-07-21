@@ -1,5 +1,5 @@
 // MODULES
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // ICONS
@@ -15,14 +15,13 @@ import ShareIcon from '../../Icons/Share';
 import WorldIcon from '../../Icons/World';
 import StarIcon from '../../Icons/Star';
 
-// ACTIONS
+// DISPATCH ACTIONS
 import { setSidebar } from '../../../state/global/actions';
 
 // STYLES
 import styles from './Home.module.scss';
 
 function HomeFeed() {
-  const global = useSelector((state) => state.global);
   const dispatch = useDispatch();
 
   return (

@@ -10,6 +10,7 @@ import LoadingPage from '../pages/Loading';
 
 // PAGES
 const HomePage = lazy(() => import('../pages/Home.js'));
+const ExplorePage = lazy(() => import('../pages/Explore.js'));
 
 function AuthorizedRoutes() {
   return (
@@ -18,7 +19,7 @@ function AuthorizedRoutes() {
         <Router>
           <Switch>
             <FeedLayout path="/home" component={<HomePage />} />
-            <FeedLayout path="/explore" component={<HomePage />} />
+            <FeedLayout path="/explore" component={<ExplorePage />} />
           </Switch>
         </Router>
       </Suspense>

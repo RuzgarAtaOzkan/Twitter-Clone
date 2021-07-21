@@ -1,0 +1,22 @@
+.input-area {
+  border: 1px solid #1892df;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 30px;
+
+  svg {
+    margin: 0 0.8rem 0 0.6rem;
+    color: #1892df;
+    font-size: 20px;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 4px 0;
+    font-size: 16px;
+  }
+}
