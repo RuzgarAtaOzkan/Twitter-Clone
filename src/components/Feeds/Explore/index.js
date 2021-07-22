@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 
 // ICONS
 import SettingsIcon from '../../Icons/Settings';
-import SearchIcon from '../../Icons/Search';
 
 // COMPONENTS
 import Input from '../../Input';
@@ -28,7 +27,7 @@ function Explore() {
             onClick={() => dispatch(setSidebar(true))}
             className={styles['image']}
           >
-            <img src="/assets/img/ruzgar.JPG" />
+            <img alt="Profile" src="/assets/img/ruzgar.JPG" />
           </div>
 
           <div className={styles['input-area']}>
@@ -41,11 +40,11 @@ function Explore() {
 
         <div className={styles['media-area']}>
           <div className={styles['visual-area']}>
-            <img src="/assets/img/ruzgar.JPG" />
+            <img alt="Profile" src="/assets/img/ruzgar.JPG" />
 
             <div className={styles['info-area']}>
               <div className={styles['profile-info']}>
-                <img src="/assets/img/ruzgar.JPG" />
+                <img alt="Profile" src="/assets/img/ruzgar.JPG" />
 
                 <div className={styles['name']}>Ruzgar Ata Ozkan</div>
 
@@ -81,7 +80,7 @@ function Explore() {
             </div>
 
             <div className={styles['right-area']}>
-              <img src="/assets/img/ruzgar.JPG" />
+              <img alt="Profile" src="/assets/img/ruzgar.JPG" />
             </div>
           </div>
           <div className={styles['section']}>
@@ -98,7 +97,7 @@ function Explore() {
             </div>
 
             <div className={styles['right-area']}>
-              <img src="/assets/img/ruzgar.JPG" />
+              <img alt="Profile" src="/assets/img/ruzgar.JPG" />
             </div>
           </div>
           <div className={styles['section']}>
@@ -115,7 +114,7 @@ function Explore() {
             </div>
 
             <div className={styles['right-area']}>
-              <img src="/assets/img/ruzgar.JPG" />
+              <img alt="Profile" src="/assets/img/ruzgar.JPG" />
             </div>
           </div>
           <div className={styles['section']}>
@@ -132,7 +131,7 @@ function Explore() {
             </div>
 
             <div className={styles['right-area']}>
-              <img src="/assets/img/ruzgar.JPG" />
+              <img alt="Profile" src="/assets/img/ruzgar.JPG" />
             </div>
           </div>
 

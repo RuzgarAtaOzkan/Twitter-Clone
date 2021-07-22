@@ -1,6 +1,5 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
-import cn from 'classnames';
 
 // COMPONENTS
 import Nav from '../../Nav';

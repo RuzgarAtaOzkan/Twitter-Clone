@@ -94,7 +94,7 @@ function Sidebar() {
         <div className={styles['nav-area']}>
           <div className={styles['profiles-area']}>
             <div className={styles['profile']}>
-              <img src="/assets/img/ruzgar.JPG" />
+              <img alt="Profile" src="/assets/img/ruzgar.JPG" />
             </div>
             <div className={styles['add-profile-icon-area']}>
               <AddIcon />

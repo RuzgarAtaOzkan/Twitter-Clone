@@ -131,7 +131,7 @@ function RecommendationBar() {
 
             <div className={styles['profile-section']}>
               <div className={styles['image-area']}>
-                <img src="/assets/img/ruzgar.JPG" />
+                <img alt="Profile" src="/assets/img/ruzgar.JPG" />
               </div>
 
               <div className={styles['info-area']}>
@@ -147,7 +147,7 @@ function RecommendationBar() {
             </div>
             <div className={styles['profile-section']}>
               <div className={styles['image-area']}>
-                <img src="/assets/img/ruzgar.JPG" />
+                <img alt="Profile" src="/assets/img/ruzgar.JPG" />
               </div>
 
               <div className={styles['info-area']}>
@@ -163,7 +163,7 @@ function RecommendationBar() {
             </div>
             <div className={styles['profile-section']}>
               <div className={styles['image-area']}>
-                <img src="/assets/img/ruzgar.JPG" />
+                <img alt="Profile" src="/assets/img/ruzgar.JPG" />
               </div>
 
               <div className={styles['info-area']}>

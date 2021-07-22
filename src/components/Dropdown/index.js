@@ -58,7 +58,7 @@ function Dropdown({
                   <div className={styles['icon']}>{item.icon}</div>
                 )}
 
-                {item.img && <img alt="" src={item.img} />}
+                {item.img && <img alt={item.title} src={item.img} />}
                 <div className={cn(item.icon && styles['title'])}>
                   {item.title}
                 </div>

@@ -3,7 +3,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 // ROUTES
-import AuthorizedRoutes from './routes/Authorized';
+import Routes from './routes';
 
 // STORE
 import store from './state/store';
@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Provider store={store}>
-        <AuthorizedRoutes />
+        <Routes />
       </Provider>
     </>
   );

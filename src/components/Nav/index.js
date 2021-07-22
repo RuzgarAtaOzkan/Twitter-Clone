@@ -224,6 +224,7 @@ function Nav() {
               arrow
             />
             <img
+              alt="Profile"
               onClick={() => setAccountDropdown(!accountDropdown)}
               src="/assets/img/ruzgar.JPG"
             />

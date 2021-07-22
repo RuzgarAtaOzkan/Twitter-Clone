@@ -1,6 +1,6 @@
 // MODULES
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 // ICONS
 import ImageIcon from '../../Icons/Image';
@@ -33,7 +33,7 @@ function HomeFeed() {
               onClick={() => dispatch(setSidebar(true))}
               className={styles['image']}
             >
-              <img src="/assets/img/ruzgar.JPG" />
+              <img alt="Profile" src="/assets/img/ruzgar.JPG" />
             </div>
             <h1>Home</h1>
           </div>
@@ -44,7 +44,7 @@ function HomeFeed() {
 
         <div className={styles['tweet']}>
           <div className={styles['left-side']}>
-            <img src="/assets/img/ruzgar.JPG" />
+            <img alt="Profile" src="/assets/img/ruzgar.JPG" />
           </div>
 
           <div className={styles['right-side']}>
@@ -90,7 +90,7 @@ function HomeFeed() {
         <div className={styles['posts-area']}>
           <div className={styles['post']}>
             <div className={styles['left-side']}>
-              <img src="/assets/img/ruzgar.JPG" />
+              <img alt="Profile" src="/assets/img/ruzgar.JPG" />
             </div>
             <div className={styles['right-side']}>
               <div className={styles['info']}>
@@ -111,7 +111,7 @@ function HomeFeed() {
               </div>
 
               <div className={styles['media']}>
-                <img />
+                <img alt="Profile" />
               </div>
 
               <div className={styles['tweet-options']}>
