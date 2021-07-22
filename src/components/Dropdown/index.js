@@ -14,7 +14,7 @@ function Dropdown({
   classNames,
   arrow,
 }) {
-  const [dropdownPos, setDropdownPos] = useState('');
+  const [dropdownPos] = useState('');
   const dropdownArea = useRef();
 
   function getDropdownPos() {
@@ -58,7 +58,7 @@ function Dropdown({
                   <div className={styles['icon']}>{item.icon}</div>
                 )}
 
-                {item.img && <img src={item.img} />}
+                {item.img && <img alt="" src={item.img} />}
                 <div className={cn(item.icon && styles['title'])}>
                   {item.title}
                 </div>
