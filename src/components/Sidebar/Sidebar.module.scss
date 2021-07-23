@@ -9,7 +9,7 @@
     position: fixed;
     top: 0;
     left: -100%;
-    width: 80%;
+    width: 82%;
     height: 100%;
     overflow-y: scroll;
     z-index: 11;
@@ -30,6 +30,7 @@
     .icon-area {
       color: rgba(29, 161, 242, 1);
       font-weight: bold;
+      cursor: pointer;
     }
   }
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
+import cn from 'classnames';
 
 // COMPONENTS
 import Nav from '../../Nav';
@@ -10,13 +11,20 @@ import BottomBar from '../../Nav/BottomBar';
 import styles from './Feed.module.scss';
 
 function FeedLayout({ exact, path = '/', component }) {
+  //const auth = useSelector((state) => state.auth); TODO uncomment
+
   return (
     <Route
       exact={exact}
       path={path}
       render={() => {
+        if (false) {
+          // !auth.user
+          return <Redirect to="/login" />;
+        }
+
         return (
-          <main className={styles['feed-layout']}>
+          <main className={cn(styles['feed-layout'])}>
             <Nav />
             {component}
             <RecommendationBar />

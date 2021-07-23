@@ -14,6 +14,7 @@ import styles from './BottomBar.module.scss';
 
 function BottomBar() {
   const [activeIcon, setActiveIcon] = useState(-1);
+  const pathname = window.location.pathname;
 
   const bottomBarItems = [
     {
@@ -44,14 +45,19 @@ function BottomBar() {
         {bottomBarItems.map((item, index) => {
           return (
             <div
+              key={index}
               onClick={() => setActiveIcon(index)}
               className={cn(
                 styles['icon-area'],
-                index === activeIcon ? styles['active-icon'] : null,
+                index === activeIcon || item.path === pathname
+                  ? styles['active-icon']
+                  : null,
               )}
             >
               <Link to={item.path}>
-                {index === activeIcon ? item.activeIcon : item.icon}
+                {index === activeIcon || item.path === pathname
+                  ? item.activeIcon
+                  : item.icon}
               </Link>
             </div>
           );

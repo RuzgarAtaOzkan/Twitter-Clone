@@ -7,9 +7,9 @@ import { RiArrowDropDownFill } from 'react-icons/ri';
 import styles from './Dropdown.module.scss';
 
 function Dropdown({
-  items,
-  active,
-  setActive,
+  items = [],
+  active = false,
+  setActive = () => {},
   pos,
   classNames,
   arrow,

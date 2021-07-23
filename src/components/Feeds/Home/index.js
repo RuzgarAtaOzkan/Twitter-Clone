@@ -111,7 +111,7 @@ function HomeFeed() {
               </div>
 
               <div className={styles['media']}>
-                <img alt="Profile" />
+                <img alt="Profile" src="/assets/img/ruzgar.JPG" />
               </div>
 
               <div className={styles['tweet-options']}>

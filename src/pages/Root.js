@@ -7,7 +7,7 @@ function Root() {
   const auth = useSelector((state) => state.auth);
 
   if (!auth.user) {
-    return <Redirect to="/signin" />;
+    return <Redirect to="/login" />;
   }
 
   return <Redirect to="/home" />;

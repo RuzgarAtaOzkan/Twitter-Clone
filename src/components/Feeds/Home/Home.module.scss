@@ -128,6 +128,7 @@
           margin-top: 0.5rem;
 
           div {
+            color: #1da1f2;
             margin: 0rem 0.2rem;
             display: flex;
             justify-content: center;
@@ -212,6 +213,17 @@
         .content {
           line-height: 22px;
           width: 90%;
+          margin-bottom: 1rem;
+        }
+
+        .media {
+          margin-bottom: 1rem;
+          img {
+            width: 90%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 18px;
+          }
         }
 
         .tweet-options {
