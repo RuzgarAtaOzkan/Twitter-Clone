@@ -1,0 +1,22 @@
+#loading-page-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spin 2s infinite;
+
+  .icon-area {
+    font-size: 5rem;
+    color: rgba(29, 161, 242, 1);
+  }
+
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

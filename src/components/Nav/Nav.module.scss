@@ -86,28 +86,28 @@ header {
           }
 
           a:hover {
-            background-color: rgba($color: #84abff, $alpha: 0.2);
+            background-color: rgba(29, 161, 242, 0.1);
 
             .icon {
-              color: rgba($color: #84abff, $alpha: 1);
+              color: rgba(29, 161, 242, 1);
             }
 
             .title {
-              color: rgba($color: #84abff, $alpha: 1);
+              color: rgba(29, 161, 242, 1);
             }
           }
         }
 
         .active-item {
           a {
-            background-color: rgba($color: #84abff, $alpha: 0.2);
+            background-color: rgba(29, 161, 242, 0.1);
 
             .icon {
-              color: rgba($color: #84abff, $alpha: 1);
+              color: rgba(29, 161, 242, 1);
             }
 
             .title {
-              color: rgba($color: #84abff, $alpha: 1);
+              color: rgba(29, 161, 242, 1);
             }
           }
         }

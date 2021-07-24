@@ -1,10 +1,17 @@
 // MODULES
 import React from 'react';
 
+// ICONS
+import LoadingIcon from '../components/Icons/Loading';
+
 function Loading() {
   return (
     <>
-      <div className="loading-area">Loading...</div>
+      <section id="loading-page-area">
+        <div className="icon-area">
+          <LoadingIcon />
+        </div>
+      </section>
     </>
   );
 }

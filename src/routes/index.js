@@ -1,6 +1,5 @@
 // MODULES
 import React, { Suspense, lazy } from 'react';
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,7 +7,7 @@ import {
 } from 'react-router-dom';
 
 // COMPONENTS
-import BackgroundCover from '../components/Modals/BackgroundCover';
+import GlobalComponents from '../components/Global';
 
 // LAYOUTS
 import FeedLayout from '../components/Layouts/Feed';
@@ -39,7 +38,7 @@ function AuthorizedRoutes() {
             />
           </Switch>
 
-          <BackgroundCover />
+          <GlobalComponents />
         </Router>
       </Suspense>
     </>
