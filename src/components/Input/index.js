@@ -1,5 +1,6 @@
 // MODULES
 import React from 'react';
+import cn from 'classnames';
 
 // ICONS
 import SearchIcon from '../Icons/Search';
@@ -11,10 +12,11 @@ function Input({
   placeholder = '',
   value = '',
   onChange = (value) => {},
+  classNames = '',
 }) {
   return (
     <>
-      <div className={styles['input-area']}>
+      <div className={cn(styles['input-area'], styles[classNames])}>
         <SearchIcon />
 
         <input

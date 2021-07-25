@@ -11,6 +11,7 @@ import GlobalComponents from '../components/Global';
 
 // LAYOUTS
 import FeedLayout from '../components/Layouts/Feed';
+import SettingsLayout from '../components/Layouts/Settings';
 
 // PAGES
 import LoadingPage from '../pages/Loading';
@@ -22,6 +23,7 @@ const ExplorePage = lazy(() => import('../pages/Explore.js'));
 const NotificationsPage = lazy(() =>
   import('../pages/Notifications.js'),
 );
+const MessagesPage = lazy(() => import('../pages/Messages.js'));
 
 function AuthorizedRoutes() {
   return (
@@ -35,6 +37,10 @@ function AuthorizedRoutes() {
             <FeedLayout
               path="/notifications"
               component={<NotificationsPage />}
+            />
+            <SettingsLayout
+              path="/messages"
+              component={<MessagesPage />}
             />
           </Switch>
 

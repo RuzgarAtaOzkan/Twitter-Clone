@@ -1,7 +1,6 @@
 // MODULES
 import React, { useState } from 'react';
 import cn from 'classnames';
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 // ICONS

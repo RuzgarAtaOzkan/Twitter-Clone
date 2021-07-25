@@ -155,7 +155,7 @@ function Nav() {
                   <div
                     className={cn(
                       styles['list-item-container'],
-                      index === activeIcon
+                      navItem.path === window.location.pathname
                         ? styles['active-item']
                         : null,
                     )}
