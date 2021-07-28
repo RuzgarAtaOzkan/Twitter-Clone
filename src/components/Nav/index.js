@@ -186,7 +186,7 @@ function Nav() {
             })}
 
             <li>
-              <Link>
+              <Link to="#">
                 <button>
                   <span>Tweet</span>
 

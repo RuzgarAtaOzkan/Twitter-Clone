@@ -21,7 +21,7 @@ function Input({
 
         <input
           placeholder={placeholder}
-          value={value ? value : null}
+          value={value ? value : ''}
           onChange={(e) => onChange(e.target.value)}
         />
       </div>

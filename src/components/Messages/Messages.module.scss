@@ -28,9 +28,16 @@
 
     .right-area {
       & > * {
+        cursor: pointer;
         margin-left: 10px;
-        font-size: 1.4rem;
+        font-size: 2.2rem;
         color: rgba(29, 161, 242, 1);
+        border-radius: 50%;
+        padding: 5px;
+      }
+
+      & > *:hover {
+        background-color: rgba(29, 161, 242, 0.1);
       }
     }
   }
@@ -40,15 +47,17 @@
     border-bottom: 1px solid rgba($color: #b4b4b4, $alpha: 0.3);
   }
 
-  .messages-area {
-    .message-section {
+  .persons {
+    .person-section {
+      transition: all 0.2s ease-out;
+      cursor: pointer;
       padding: 0.9rem 0.9rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid rgba($color: #b4b4b4, $alpha: 0.3);
 
-      .message-box-left-area {
+      .person-box-left-area {
         display: flex;
         align-items: center;
         font-size: 15px;
@@ -61,18 +70,25 @@
           object-fit: cover;
         }
 
-        .message-box-info {
+        .person-box-info {
           display: flex;
           align-items: center;
           font-size: 14px;
 
-          .message-box-name {
+          .person-box-name {
             font-weight: bold;
-            width: 30%;
+            width: 50%;
             margin-right: 5px;
+          }
+
+          .person-box-usernmae {
           }
         }
       }
+    }
+
+    .person-section:hover {
+      background-color: rgba($color: #bbbbbb, $alpha: 0.2);
     }
   }
 }

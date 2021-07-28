@@ -7,16 +7,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: spin 2s infinite;
+  animation: spin 5s infinite;
 
   .icon-area {
-    font-size: 5rem;
+    font-size: 7srem;
     color: rgba(29, 161, 242, 1);
   }
 
   @keyframes spin {
+    0% {
+      transform: scale(1);
+    }
     100% {
-      transform: rotate(360deg);
+      transform: scale(3);
     }
   }
 }

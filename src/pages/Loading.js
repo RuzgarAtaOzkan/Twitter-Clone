@@ -2,14 +2,14 @@
 import React from 'react';
 
 // ICONS
-import LoadingIcon from '../components/Icons/Loading';
+import TwitterIcon from '../components/Icons/Twitter';
 
 function Loading() {
   return (
     <>
       <section id="loading-page-area">
         <div className="icon-area">
-          <LoadingIcon />
+          <TwitterIcon />
         </div>
       </section>
     </>
