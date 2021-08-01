@@ -1,10 +1,13 @@
 // MODULES
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import cn from 'classnames';
 
 // ICONS
 import SettingsIcon from '../Icons/Settings';
 import MailIcon from '../Icons/Mail';
+import InfoIcon from '../Icons/Info';
+import LeftArrowIcon from '../Icons/LeftArrow';
 
 // COMPONENTS
 import Input from '../Input';
@@ -18,6 +21,42 @@ import styles from './Messages.module.scss';
 export const Messages = () => {
   const dispatch = useDispatch();
 
+  const [choosenUser, setChoosenUser] = useState(null); // choosen username.
+  const [messages, setMessages] = useState([
+    {
+      from: 'you',
+      type: 'post',
+      content: 'If the Bishop moves forward, the Queen can take him.',
+      media: '/assets/img/ruzgar.JPG',
+      date: 1627829943208,
+    },
+    {
+      from: 'friend',
+      type: 'regular',
+      content: 'If the Bishop moves forward, the Queen can take him.',
+      date: 1627839943208,
+    },
+    {
+      from: 'you',
+      type: 'regular',
+      content: 'If the Bishop moves forward, the Queen can take him.',
+      date: 1627849943208,
+    },
+    {
+      from: 'friend',
+      type: 'post',
+      content: 'If the Bishop moves forward, the Queen can take him.',
+      media: '/assets/img/ruzgar.JPG',
+      date: 1627859943208,
+    },
+    {
+      from: 'you',
+      type: 'post',
+      content: 'If the Bishop moves forward, the Queen can take him.',
+      media: '/assets/img/ruzgar.JPG',
+      date: 1627869943208,
+    },
+  ]);
   const [searchValue, setSearchValue] = useState('');
   const [persons, setPersons] = useState([
     {
@@ -46,9 +85,18 @@ export const Messages = () => {
     },
   ]);
 
+  React.useEffect(() => {
+    console.log(choosenUser);
+  }, [choosenUser]);
+
   return (
     <>
-      <div className={styles['persons-area']}>
+      <div
+        className={cn(
+          styles['persons-area'],
+          choosenUser ? styles['inactive'] : null,
+        )}
+      >
         <div className={styles['persons-title']}>
           <div className={styles['left-area']}>
             <div
@@ -77,7 +125,11 @@ export const Messages = () => {
         <div className={styles['persons']}>
           {persons.map((person, index) => {
             return (
-              <div key={index} className={styles['person-section']}>
+              <div
+                onClick={() => setChoosenUser(person.username)}
+                key={index}
+                className={styles['person-section']}
+              >
                 <div className={styles['person-box-left-area']}>
                   <img alt="Profile" src={person.img} />
                   <div className={styles['person-box-info']}>
@@ -97,7 +149,80 @@ export const Messages = () => {
           })}
         </div>
       </div>
-      <div className={styles['messages-area']}>messages</div>
+
+      <div
+        className={cn(
+          styles['messages-area'],
+          choosenUser ? null : styles['inactive'],
+        )}
+      >
+        {choosenUser ? (
+          <>
+            <div className={styles['messages-title']}>
+              <div className={styles['left-area']}>
+                <div
+                  onClick={() => {
+                    setChoosenUser(null);
+                  }}
+                  className={styles['left-arrow-icon']}
+                >
+                  <LeftArrowIcon />
+                </div>
+
+                <div className={styles['image']}>
+                  <img alt="Profile" src="/assets/img/basar.jpg" />
+                </div>
+                <div className={styles['info-area']}>
+                  <div className={styles['name']}>Basar</div>
+                  <div className={styles['username']}>
+                    @basarballioz
+                  </div>
+                </div>
+              </div>
+              <div className={styles['right-area']}>
+                <InfoIcon />
+              </div>
+            </div>
+
+            <div className={styles['messages']}>
+              {messages.map((message, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={cn(
+                      styles['message'],
+                      styles[message.from],
+                    )}
+                  >
+                    <div className={styles['image']}>
+                      <img
+                        src="/assets/img/basar.jpg"
+                        alt="Profile"
+                      />
+                    </div>
+                    <div className={styles[message.type]}>
+                      {message.content}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </>
+        ) : (
+          <>
+            <div className={styles['start-conversation-area']}>
+              <div className={styles['start-conversation-title']}>
+                You don’t have a message selected
+              </div>
+              <div className={styles['start-conversation-subtitle']}>
+                Choose one from your existing messages, or start a new
+                one.
+              </div>
+              <button onClick={() => {}}>New message</button>
+            </div>
+          </>
+        )}
+      </div>
     </>
   );
 };

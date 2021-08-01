@@ -8,6 +8,8 @@
     align-items: center;
     padding: 0.9rem 0.9rem;
     border-bottom: 1px solid rgba($color: #b4b4b4, $alpha: 0.3);
+    height: 60px;
+
     .left-area {
       display: flex;
 
@@ -30,7 +32,7 @@
       & > * {
         cursor: pointer;
         margin-left: 10px;
-        font-size: 2.2rem;
+        font-size: 2.4rem;
         color: rgba(29, 161, 242, 1);
         border-radius: 50%;
         padding: 5px;
@@ -90,5 +92,181 @@
     .person-section:hover {
       background-color: rgba($color: #bbbbbb, $alpha: 0.2);
     }
+  }
+}
+
+.messages-area {
+  border-right: 1px solid rgba($color: #b4b4b4, $alpha: 0.3);
+  padding-top: 5rem;
+
+  @media only screen and (max-width: 1000px) {
+    border-left: 1px solid rgba($color: #b4b4b4, $alpha: 0.3);
+  }
+
+  .messages-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 0.9rem;
+    height: 60px;
+    border-bottom: 1px solid rgba($color: #b4b4b4, $alpha: 0.3);
+    position: fixed;
+    width: 599px;
+    top: 0;
+    background-color: white;
+    z-index: 4;
+
+    @media only screen and (max-width: 1000px) {
+      border-right: 1px solid rgba($color: #b4b4b4, $alpha: 0.3);
+    }
+
+    @media only screen and (max-width: 700px) {
+      width: 85%;
+    }
+
+    @media only screen and (max-width: 500px) {
+      width: 100%;
+    }
+
+    .left-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .left-arrow-icon {
+        svg {
+          margin: 0;
+          cursor: pointer;
+          margin-left: 10px;
+          font-size: 2.4rem;
+          color: rgba(29, 161, 242, 1);
+          border-radius: 50%;
+          padding: 5px;
+          display: none;
+
+          @media only screen and (max-width: 1000px) {
+            display: block;
+          }
+        }
+
+        svg:hover {
+          background-color: rgba(29, 161, 242, 0.1);
+        }
+      }
+
+      .image {
+        margin-left: 1rem;
+        img {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+
+      .info-area {
+        margin-left: 0.7rem;
+        .name {
+          font-weight: bold;
+          font-size: 18px;
+        }
+
+        .username {
+          color: #707070;
+          font-size: 13px;
+        }
+      }
+    }
+
+    .right-area {
+      & > * {
+        cursor: pointer;
+        margin-left: 10px;
+        font-size: 2.4rem;
+        color: rgba(29, 161, 242, 1);
+        border-radius: 50%;
+        padding: 8px;
+      }
+
+      & > *:hover {
+        background-color: rgba(29, 161, 242, 0.1);
+      }
+    }
+  }
+
+  .messages {
+    position: relative;
+    height: 100%;
+
+    .message {
+      border: 1px solid red;
+
+      .image {
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+
+      .regular {
+      }
+
+      .post {
+      }
+    }
+
+    .you {
+      display: flex;
+      justify-content: flex-end;
+
+      .image {
+        display: none;
+      }
+    }
+
+    .friend {
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+}
+
+.inactive {
+  @media only screen and (max-width: 1000px) {
+    display: none;
+  }
+}
+
+.start-conversation-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  height: 100%;
+
+  .start-conversation-title {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 0.8rem;
+  }
+
+  .start-conversation-subtitle {
+    color: #707070;
+    margin-bottom: 0.8rem;
+    font-size: 15px;
+  }
+
+  button {
+    padding: 12px 20px;
+    background-color: rgba(29, 161, 242, 1);
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
   }
 }
