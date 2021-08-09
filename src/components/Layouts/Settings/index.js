@@ -1,5 +1,6 @@
 // MODULES
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 import cn from 'classnames';
 
@@ -9,8 +10,8 @@ import Nav from '../../Nav';
 // STYLES
 import styles from './Settings.module.scss';
 
-function SettingsLayout({ exact, path = '/', component }) {
-  //const auth = useSelector((state) => state.auth); TODO uncomment
+function SettingsLayout({ exact, path = '/', component: Component }) {
+  //const auth = useSelector((state) => state.auth);
 
   return (
     <Route
@@ -18,14 +19,13 @@ function SettingsLayout({ exact, path = '/', component }) {
       path={path}
       render={() => {
         if (false) {
-          // !auth.user
           return <Redirect to="/login" />;
         }
 
         return (
           <main className={cn(styles['settings-layout'])}>
             <Nav />
-            {component}
+            <Component />
           </main>
         );
       }}

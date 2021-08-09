@@ -165,7 +165,7 @@ function Nav() {
                         setActiveIcon(index);
                         navItem.onClick && navItem.onClick();
                       }}
-                      to={navItem.path && navItem.path}
+                      to={navItem.path ? navItem.path : '#'}
                       className={navItem.dropdown && 'pos-rel'}
                     >
                       <div className={styles['icon']}>

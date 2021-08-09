@@ -22,7 +22,7 @@ export const Messages = () => {
   const dispatch = useDispatch();
 
   const [choosenUser, setChoosenUser] = useState(null); // choosen username.
-  const [messages, setMessages] = useState([
+  const [messages] = useState([
     {
       from: 'you',
       type: 'post',
@@ -58,7 +58,7 @@ export const Messages = () => {
     },
   ]);
   const [searchValue, setSearchValue] = useState('');
-  const [persons, setPersons] = useState([
+  const [persons] = useState([
     {
       name: 'Ruzgar Ata Ozkan',
       username: '@RuzgarAtaOzkan',
@@ -84,10 +84,6 @@ export const Messages = () => {
       img: '/assets/img/basar.jpg',
     },
   ]);
-
-  React.useEffect(() => {
-    console.log(choosenUser);
-  }, [choosenUser]);
 
   return (
     <>

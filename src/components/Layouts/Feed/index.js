@@ -10,7 +10,7 @@ import RecommendationBar from '../../RecommendationBar';
 // STYLES
 import styles from './Feed.module.scss';
 
-function FeedLayout({ exact, path = '/', component }) {
+function FeedLayout({ exact, path = '/', component: Component }) {
   //const auth = useSelector((state) => state.auth); TODO uncomment
 
   return (
@@ -26,7 +26,7 @@ function FeedLayout({ exact, path = '/', component }) {
         return (
           <main className={cn(styles['feed-layout'])}>
             <Nav />
-            {component}
+            <Component />
             <RecommendationBar />
           </main>
         );

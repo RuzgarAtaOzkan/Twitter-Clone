@@ -32,15 +32,15 @@ function AuthorizedRoutes() {
         <Router>
           <Switch>
             <Route exact path="/" component={RootPage} />
-            <FeedLayout path="/home" component={<HomePage />} />
-            <FeedLayout path="/explore" component={<ExplorePage />} />
+            <FeedLayout path="/home" component={HomePage} />
+            <FeedLayout path="/explore" component={ExplorePage} />
             <FeedLayout
               path="/notifications"
-              component={<NotificationsPage />}
+              component={NotificationsPage}
             />
             <SettingsLayout
               path="/messages"
-              component={<MessagesPage />}
+              component={MessagesPage}
             />
           </Switch>
 
