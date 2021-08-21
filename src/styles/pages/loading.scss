@@ -8,10 +8,11 @@
   justify-content: center;
   align-items: center;
   animation: spin 5s infinite;
+  background-color: rgba(29, 161, 242, 1);
 
   .icon-area {
-    font-size: 7srem;
-    color: rgba(29, 161, 242, 1);
+    font-size: 7rem;
+    color: rgb(255, 255, 255);
   }
 
   @keyframes spin {

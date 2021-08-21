@@ -25,7 +25,7 @@ const NotificationsPage = lazy(() =>
 );
 const MessagesPage = lazy(() => import('../pages/Messages.js'));
 
-function AuthorizedRoutes() {
+function Routes() {
   return (
     <>
       <Suspense fallback={<LoadingPage />}>
@@ -51,4 +51,4 @@ function AuthorizedRoutes() {
   );
 }
 
-export default AuthorizedRoutes;
+export default Routes;

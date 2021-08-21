@@ -133,6 +133,56 @@ function HomeFeed() {
               </div>
             </div>
           </div>
+
+          <div className={styles['post']}>
+            <div className={styles['left-side']}>
+              <img alt="Profile" src="/assets/img/ruzgar.JPG" />
+            </div>
+            <div className={styles['right-side']}>
+              <div className={styles['info']}>
+                <div className={styles['name']}>Ruzgar Ata Ozkan</div>
+                <div className={styles['username']}>
+                  @RuzgarAtaOzkan
+                </div>
+                .<div className={styles['time']}>14m</div>
+              </div>
+
+              <div className={styles['content']}>
+                Kudos to SEC Commissioners Peirce and Roisman for
+                speaking up the truth! Peirce & Roisman obviously knew
+                beforehand that Ripple would take their letter to the
+                Courts. —They are corageously standing vs. the
+                "regulate-by-enforcement" policy pushed by the other
+                three commissioners.
+              </div>
+
+              <div className={styles['media']}>
+                <source
+                  type="video/mp4"
+                  alt="Profile"
+                  src="%PUBLIC_URL%/assets/video/video.mp4"
+                />
+              </div>
+
+              <div className={styles['tweet-options']}>
+                <div className={styles['tweet-option']}>
+                  <MessageIcon />
+                  <span>53</span>
+                </div>
+                <div className={styles['tweet-option']}>
+                  <RetweetIcon />
+                  <span>12</span>
+                </div>
+                <div className={styles['tweet-option']}>
+                  <HeartIcon />
+                  <span>32</span>
+                </div>
+                <div className={styles['tweet-option']}>
+                  <ShareIcon />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>

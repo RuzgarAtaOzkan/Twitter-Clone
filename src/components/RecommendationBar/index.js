@@ -118,7 +118,7 @@ function RecommendationBar() {
             </div>
 
             <div className={styles['show-more']}>
-              <Link>Show more</Link>
+              <Link to="#">Show more</Link>
             </div>
           </div>
         )}
@@ -179,7 +179,7 @@ function RecommendationBar() {
             </div>
 
             <div className={styles['show-more']}>
-              <Link>Show more</Link>
+              <Link to="#">Show more</Link>
             </div>
           </div>
 
@@ -231,7 +231,7 @@ function RecommendationBar() {
             </div>
 
             <div className={styles['show-more']}>
-              <Link>Show more</Link>
+              <Link to="#">Show more</Link>
             </div>
           </div>
         </div>

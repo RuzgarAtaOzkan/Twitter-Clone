@@ -6,6 +6,7 @@ import cn from 'classnames';
 // COMPONENTS
 import Dropdown from '../Dropdown';
 import Sidebar from '../Sidebar';
+import DisplayModal from '../Modals/Display';
 
 // ICONS
 import HomeIcon from '../Icons/Home';
@@ -35,6 +36,8 @@ function Nav() {
   const [moreOptionsDropdown, setMoreOptionsDropdown] =
     useState(false);
   const [accountDropdown, setAccountDropdown] = useState(false);
+
+  const [displayModalOpen, setDisplayModalOpen] = useState(false);
 
   const navItems = [
     {
@@ -115,6 +118,9 @@ function Nav() {
             {
               icon: <BrushIcon />,
               title: 'Display',
+              onClick: () => {
+                setDisplayModalOpen(!displayModalOpen);
+              },
             },
           ]}
           active={moreOptionsDropdown}
@@ -240,6 +246,12 @@ function Nav() {
           </div>
         </nav>
       </header>
+
+      <DisplayModal
+        open={displayModalOpen}
+        setOpen={() => setDisplayModalOpen(true)}
+        setClose={() => setDisplayModalOpen(false)}
+      />
 
       <Sidebar />
     </>

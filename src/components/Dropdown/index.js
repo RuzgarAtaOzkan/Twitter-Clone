@@ -53,6 +53,7 @@ function Dropdown({
               {item.divider && <div className="dd-divider" />}
               <div
                 className={cn(styles['dropdown-item'], classNames)}
+                onClick={item.onClick ? item.onClick : null}
               >
                 {item.icon && (
                   <div className={styles['icon']}>{item.icon}</div>
