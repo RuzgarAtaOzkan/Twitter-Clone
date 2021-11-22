@@ -1,7 +1,6 @@
 // MODULES
 import React from 'react';
 import cn from 'classnames';
-import { useSelector } from 'react-redux';
 
 // STYLES
 import styles from './Display.module.scss';

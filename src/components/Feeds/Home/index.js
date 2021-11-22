@@ -21,7 +21,7 @@ import { setSidebar } from '../../../state/global/actions';
 // STYLES
 import styles from './Home.module.scss';
 
-function HomeFeed() {
+function HomeFeed({ data }) {
   const dispatch = useDispatch();
 
   return (
@@ -35,7 +35,7 @@ function HomeFeed() {
             >
               <img alt="Profile" src="/assets/img/ruzgar.JPG" />
             </div>
-            <h1>Home</h1>
+            <h1>Home {data.category}</h1>
           </div>
           <div className={styles['title-icon']}>
             <StarIcon />

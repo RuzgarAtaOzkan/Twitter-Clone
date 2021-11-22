@@ -83,6 +83,10 @@ function Nav() {
       path: '/profile',
     },
     {
+      activeIcon: <MoreIcon active />,
+      icon: <MoreIcon />,
+      title: 'More',
+      onClick: () => setMoreOptionsDropdown(!moreOptionsDropdown),
       dropdown: (
         <Dropdown
           items={[
@@ -127,12 +131,6 @@ function Nav() {
           setActive={setMoreOptionsDropdown}
         />
       ),
-      activeIcon: <MoreIcon active />,
-      icon: <MoreIcon />,
-      title: 'More',
-      onClick: () => {
-        setMoreOptionsDropdown(!moreOptionsDropdown);
-      },
     },
   ];
 

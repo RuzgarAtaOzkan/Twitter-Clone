@@ -1,5 +1,5 @@
 // MODULES
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
@@ -14,7 +14,7 @@ import styles from './BottomBar.module.scss';
 
 function BottomBar() {
   const [activeIcon, setActiveIcon] = useState(-1);
-  const pathname = window.location.pathname;
+  const [pathname, setPathname] = useState(window.location.pathname);
 
   const bottomBarItems = [
     {
@@ -38,6 +38,17 @@ function BottomBar() {
       path: '/messages',
     },
   ];
+
+  function onResize(e) {
+    setPathname(window.location.pathname);
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('resize', onResize);
+    };
+  }, []);
 
   return (
     <nav>
