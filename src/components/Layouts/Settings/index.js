@@ -4,6 +4,9 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import cn from 'classnames';
 
+// CONFIG
+import routesConfig from '../../../config/routes';
+
 // COMPONENTS
 import Nav from '../../Nav';
 
@@ -11,7 +14,12 @@ import Nav from '../../Nav';
 import styles from './Settings.module.scss';
 
 function SettingsLayout({ exact, path = '/', component: Component }) {
+  const endpoints = { ...routesConfig.endpoints };
+
   //const auth = useSelector((state) => state.auth);
+  if (!path || !Component) {
+    throw new Error('Too few arguments specified in FeedLayout.js');
+  }
 
   return (
     <Route
@@ -19,7 +27,7 @@ function SettingsLayout({ exact, path = '/', component: Component }) {
       path={path}
       render={() => {
         if (false) {
-          return <Redirect to="/login" />;
+          return <Redirect to={endpoints.signin} />;
         }
 
         return (
