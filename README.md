@@ -1,6 +1,6 @@
 # Twitter Clone
 
-Project deployed to https://twitter-clone-ruzgarataozkan.vercel.app
+Project deployed to https://twitter-clone-ruzgarataozkan.vercel.app/home
 
 ## Install
 

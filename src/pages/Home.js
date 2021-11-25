@@ -13,7 +13,7 @@ import HomeFeed from '../components/Feeds/Home';
 function Home() {
   const [data, setData] = useState({});
 
-  async function getPublicAPI(updateData) {
+  async function getPublicAPI(set) {
     try {
       const response = await request({
         endpoint: '',
@@ -22,9 +22,7 @@ function Home() {
         body: {},
       });
 
-      const data = response.data;
-
-      updateData(data);
+      set(response.data);
     } catch (error) {
       console.log(error);
     }

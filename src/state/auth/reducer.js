@@ -1,7 +1,11 @@
+// TYPES
 import types from './types';
 
+// MODELS
+import userModel from './user';
+
 const initialValue = {
-  user: null,
+  user: userModel,
 };
 
 export default function authReducer(state = initialValue, action) {

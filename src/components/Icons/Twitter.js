@@ -1,9 +1,9 @@
 // MODULES
 import React from 'react';
-import { FaTwitter } from 'react-icons/fa';
+import { AiOutlineTwitter } from 'react-icons/ai';
 
-function Twitter({ active }) {
-  return active ? <FaTwitter /> : <FaTwitter />;
+function Topic({ active }) {
+  return active ? <AiOutlineTwitter /> : <AiOutlineTwitter />;
 }
 
-export default Twitter;
+export default Topic;

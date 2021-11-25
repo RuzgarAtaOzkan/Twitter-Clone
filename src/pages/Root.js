@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 function Root() {
   const auth = useSelector((state) => state.auth);
 
-  if (!auth.user) {
+  if (!auth.user || !auth.user.authorized) {
     return <Redirect to="/login" />;
   }
 

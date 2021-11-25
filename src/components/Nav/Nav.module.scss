@@ -2,6 +2,7 @@ header {
   @media only screen and (max-width: 500px) {
     display: none;
   }
+
   nav {
     z-index: 10;
     position: fixed;
@@ -27,6 +28,10 @@ header {
 
       li {
         margin-bottom: 0.7rem;
+
+        &:first-child {
+          margin-top: 0.6rem;
+        }
 
         .list-item-container {
           display: block;
@@ -164,7 +169,7 @@ header {
     .account {
       padding: 0.5rem 0.6rem;
       border-radius: 50px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.6rem;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
