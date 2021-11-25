@@ -35,7 +35,7 @@ function HomeFeed({ data }) {
             >
               <img alt="Profile" src="/assets/img/ruzgar.JPG" />
             </div>
-            <h1>Home {data.category}</h1>
+            <h1>Home</h1>
           </div>
           <div className={styles['title-icon']}>
             <StarIcon />
