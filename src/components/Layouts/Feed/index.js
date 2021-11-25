@@ -3,6 +3,9 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import cn from 'classnames';
 
+// CONFIG
+import routesConfig from '../../../config/routes';
+
 // COMPONENTS
 import Nav from '../../Nav';
 import RecommendationBar from '../../RecommendationBar';
@@ -11,7 +14,13 @@ import RecommendationBar from '../../RecommendationBar';
 import styles from './Feed.module.scss';
 
 function FeedLayout({ exact, path = '/', component: Component }) {
+  const endpoints = { ...routesConfig.endpoints };
+
   //const auth = useSelector((state) => state.auth); TODO uncomment
+
+  if (!path || !Component) {
+    throw new Error('Too few arguments specified in FeedLayout.js');
+  }
 
   return (
     <Route
@@ -20,7 +29,7 @@ function FeedLayout({ exact, path = '/', component: Component }) {
       render={() => {
         if (false) {
           // !auth.user
-          return <Redirect to="/login" />;
+          return <Redirect to={endpoints.signin} />;
         }
 
         return (
