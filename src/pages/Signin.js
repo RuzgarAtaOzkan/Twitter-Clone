@@ -16,6 +16,7 @@ function Signin() {
       value: '',
       component: 'input',
       type: 'text',
+      section: 'text',
       focused: false,
     },
     {
@@ -25,6 +26,7 @@ function Signin() {
       value: '',
       component: 'input',
       type: 'password',
+      section: 'password',
       focused: false,
     },
   ]);
@@ -32,12 +34,13 @@ function Signin() {
   useEffect(() => {
     //console.log(formData);
     return () => {};
-  }, []);
+  }, [formData]);
 
   return (
     <>
       <section
         onClick={(e) => {
+          //console.log(e.target.parent);
           if (
             e.target.dataset.element !== 'input' &&
             e.target.dataset.element !== 'select'

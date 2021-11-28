@@ -1,9 +1,9 @@
 // MODULES
 import React from 'react';
-import { AiFillEye } from 'react-icons/ai';
+import { AiFillEye, AiOutlineEye } from 'react-icons/ai';
 
 function Eye({ active }) {
-  return active ? <AiFillEye /> : <AiOutlineEye />;
+  return active ? <AiOutlineEye /> : <AiFillEye />;
 }
 
 export default Eye;

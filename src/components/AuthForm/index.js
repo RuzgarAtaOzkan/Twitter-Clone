@@ -67,6 +67,7 @@ function AuthForm({ formData, setFormData, title, mainBtnTitle }) {
                   type={input.type}
                   focused={input.focused}
                   component={input.component}
+                  section={input.section}
                 />
               </div>
             );
