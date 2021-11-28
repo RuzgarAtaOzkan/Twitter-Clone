@@ -1,0 +1,47 @@
+.signin-page-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(34, 42, 49);
+
+  @media only screen and (max-width: 1180px) {
+    flex-direction: column-reverse;
+  }
+
+  .signin-page-section-left-area {
+    width: 60%;
+    overflow: hidden;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    @media only screen and (max-width: 1180px) {
+      width: 100%;
+    }
+
+    .signin-page-section-twitter-icon {
+      width: 300px;
+      position: absolute;
+      color: white;
+      transition: all 0.2s ease-out;
+
+      @media only screen and (max-width: 600px) {
+        width: 200px;
+      }
+    }
+  }
+
+  .signin-page-section-right-area {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+
+    @media only screen and (max-width: 1180px) {
+      width: 100%;
+    }
+  }
+}

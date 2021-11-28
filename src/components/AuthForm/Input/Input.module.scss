@@ -1,0 +1,36 @@
+.container {
+  margin-bottom: 2rem;
+  border: 1px solid rgba($color: #525252, $alpha: 1);
+  border-radius: 4px;
+  padding: 0.4rem 0.3rem;
+  position: relative;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+
+  .title {
+    color: rgba($color: #808080, $alpha: 1);
+    font-size: 18px;
+    transition: all 0.3s ease;
+  }
+
+  .title-passive {
+    font-size: 13px;
+  }
+
+  input {
+    display: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: white;
+    padding: 0.2rem;
+    font-size: 18px;
+  }
+
+  .input-active {
+    display: block;
+  }
+}

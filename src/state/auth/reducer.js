@@ -5,6 +5,7 @@ import types from './types';
 import userModel from './user';
 
 const initialValue = {
+  authenticated: false,
   user: userModel,
 };
 

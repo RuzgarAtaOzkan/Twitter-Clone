@@ -9,7 +9,6 @@ const user = {
   settings: {
     theme: '',
   },
-  authenticated: false,
 };
 
 export default user;

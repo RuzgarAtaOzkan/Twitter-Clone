@@ -14,12 +14,12 @@ import Nav from '../../Nav';
 import styles from './Settings.module.scss';
 
 function SettingsLayout({ exact, path = '/', component: Component }) {
-  const endpoints = { ...routesConfig.endpoints };
-
-  //const auth = useSelector((state) => state.auth);
   if (!path || !Component) {
     throw new Error('Too few arguments specified in FeedLayout.js');
   }
+
+  const endpoints = { ...routesConfig.endpoints };
+  //const auth = useSelector((state) => state.auth);
 
   return (
     <Route
@@ -27,6 +27,7 @@ function SettingsLayout({ exact, path = '/', component: Component }) {
       path={path}
       render={() => {
         if (false) {
+          // !auth.authenticated
           return <Redirect to={endpoints.signin} />;
         }
 

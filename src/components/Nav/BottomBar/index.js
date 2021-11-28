@@ -1,7 +1,11 @@
 // MODULES
 import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
+
+// DISPATCH TYPES
+import gloabReducerTypes from '../../../state/global/types';
 
 // ICONS
 import HomeIcon from '../../Icons/Home';
@@ -13,6 +17,9 @@ import SearchIcon from '../../Icons/Search';
 import styles from './BottomBar.module.scss';
 
 function BottomBar() {
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
+
   const [activeIcon, setActiveIcon] = useState(-1);
   const [pathname, setPathname] = useState(window.location.pathname);
 
@@ -51,30 +58,39 @@ function BottomBar() {
   }, []);
 
   return (
-    <nav>
-      <div className={styles['bottom-bar-area']}>
-        {bottomBarItems.map((item, index) => {
-          return (
-            <div
-              key={index}
-              onClick={() => setActiveIcon(index)}
-              className={cn(
-                styles['icon-area'],
-                index === activeIcon || item.path === pathname
-                  ? styles['active-icon']
-                  : null,
-              )}
-            >
-              <Link to={item.path}>
-                {index === activeIcon || item.path === pathname
-                  ? item.activeIcon
-                  : item.icon}
-              </Link>
-            </div>
-          );
-        })}
-      </div>
-    </nav>
+    auth.authenticated && (
+      <nav>
+        <div className={styles['bottom-bar-area']}>
+          {bottomBarItems.map((item, index) => {
+            return (
+              <div
+                key={index}
+                onClick={() => {
+                  setActiveIcon(index);
+                  setPathname(window.location.pathname);
+                  dispatch({
+                    type: gloabReducerTypes.SET_SIDEBAR,
+                    payload: false,
+                  });
+                }}
+                className={cn(
+                  styles['icon-area'],
+                  index === activeIcon || item.path === pathname
+                    ? styles['active-icon']
+                    : null,
+                )}
+              >
+                <Link to={item.path}>
+                  {index === activeIcon || item.path === pathname
+                    ? item.activeIcon
+                    : item.icon}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      </nav>
+    )
   );
 }
 

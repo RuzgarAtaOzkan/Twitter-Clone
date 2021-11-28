@@ -1,0 +1,34 @@
+.container {
+  background-color: black;
+  width: 90%;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1rem;
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    svg {
+      font-size: 3rem;
+      color: white;
+    }
+  }
+
+  .top-area {
+    margin-bottom: 250px;
+
+    h2 {
+      color: white;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .bottom-area {
+  }
+}

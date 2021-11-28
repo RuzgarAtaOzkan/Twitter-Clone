@@ -1,21 +1,34 @@
 // MODULES
-import React from 'react';
-import { Redirect } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 // CONFIG
 import routesConfig from '../config/routes';
 
 function Root() {
+  const history = useHistory();
   const endpoints = { ...routesConfig.endpoints };
 
   const auth = useSelector((state) => state.auth);
 
-  if (!auth.user || !auth.user.authorized) {
-    return <Redirect to={endpoints.signin} />;
-  }
+  useEffect(() => {
+    if (!auth.authenticated) {
+      return history.push(endpoints.signin);
+    }
 
-  return <Redirect to={endpoints.home} />;
+    if (auth.authenticated) {
+      return history.push(endpoints.home);
+    }
+
+    return () => {};
+  });
+
+  return (
+    <>
+      <section className="root"></section>
+    </>
+  );
 }
 
 export default Root;

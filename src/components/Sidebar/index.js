@@ -27,7 +27,7 @@ import { setSidebar } from '../../state/global/actions';
 import styles from './Sidebar.module.scss';
 
 function Sidebar() {
-  const iseSidebarOpen = useSelector(
+  const isSidebarOpen = useSelector(
     (state) => state.global.isSidebarOpen,
   );
 
@@ -76,9 +76,16 @@ function Sidebar() {
   return (
     <>
       <div
+        onClick={() => dispatch(setSidebar(false))}
+        className={cn(
+          styles['sidebar-background'],
+          isSidebarOpen && styles['sidebar-background-active'],
+        )}
+      />
+      <div
         className={cn(
           styles['sidebar-area'],
-          iseSidebarOpen && styles['sidebar-active'],
+          isSidebarOpen && styles['sidebar-active'],
         )}
       >
         <div className={styles['title-area']}>

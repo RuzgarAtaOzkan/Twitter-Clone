@@ -19,7 +19,6 @@ import AuthLayout from '../components/Layouts/Auth';
 
 // PAGES
 import LoadingPage from '../pages/Loading';
-
 // LAZY PAGES
 
 // Root pages
@@ -27,6 +26,7 @@ const RootPage = lazy(() => import('../pages/Root.js'));
 
 // Auth layout pages
 const SigninPage = lazy(() => import('../pages/Signin.js'));
+const SignupPage = lazy(() => import('../pages/Signup.js'));
 
 // Feed layout ages
 const HomePage = lazy(() => import('../pages/Home.js'));
@@ -49,7 +49,11 @@ function Routes() {
             {/* Root route */}
             <Route exact path={endpoints.root} component={RootPage} />
 
-            {/* Auth layouts */}
+            <AuthLayout
+              path={endpoints.signup}
+              component={SignupPage}
+            />
+
             <AuthLayout
               path={endpoints.signin}
               component={SigninPage}
