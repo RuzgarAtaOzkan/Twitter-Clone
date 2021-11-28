@@ -14,6 +14,7 @@ function Input({
   setFormData,
   onChange,
   value,
+  placeholder,
   title,
   name,
   type,
@@ -59,7 +60,10 @@ function Input({
             setFormData(newFormData);
           }
         }}
-        className={styles['left-area']}
+        className={cn(
+          styles['left-area'],
+          focused && styles['left-area-active'],
+        )}
         data-element={component}
       >
         <div

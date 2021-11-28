@@ -9,7 +9,7 @@
   }
 
   .signin-page-section-left-area {
-    width: 60%;
+    width: 55%;
     overflow: hidden;
     object-fit: cover;
     display: flex;
@@ -31,10 +31,24 @@
         width: 200px;
       }
     }
+
+    .signin-page-section-twitter-icon-area {
+      position: absolute;
+
+      svg {
+        font-size: 20rem;
+        color: white;
+        transition: all 0.2s ease;
+
+        @media only screen and (max-width: 600px) {
+          font-size: 12rem;
+        }
+      }
+    }
   }
 
   .signin-page-section-right-area {
-    width: 40%;
+    width: 45%;
     display: flex;
     justify-content: center;
     align-items: center;

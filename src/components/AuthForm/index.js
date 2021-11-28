@@ -11,7 +11,15 @@ import TwitterIcon from '../Icons/Twitter';
 // STYLES
 import styles from './AuthForm.module.scss';
 
-function AuthForm({ formData, setFormData, title, mainBtnTitle }) {
+function AuthForm({
+  formData,
+  setFormData,
+  title,
+  mainBtnTitle,
+  redirectTitle,
+  redirectLinkTitle,
+  redirectPath,
+}) {
   if (!formData || !setFormData) {
     throw new Error('Too few arguments for AuthForm.js');
   }
@@ -91,6 +99,11 @@ function AuthForm({ formData, setFormData, title, mainBtnTitle }) {
 
       <div className={styles['bottom-area']}>
         <div className={styles['main-button']}>{mainBtnTitle}</div>
+
+        <div className={styles['redirect-area']}>
+          <span>{redirectTitle}</span>{' '}
+          <a href={redirectPath}>{redirectLinkTitle}</a>
+        </div>
       </div>
     </div>
   );

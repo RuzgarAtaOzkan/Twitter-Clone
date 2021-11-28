@@ -4,16 +4,22 @@ import React, { useState, useEffect } from 'react';
 // COMPONENTS
 import AuthForm from '../components/AuthForm';
 
+// CONFIG
+import routesConfig from '../config/routes';
+
 // ICONS
-import TwitterIconPath from '../components/Icons/Twitter.svg';
+import TwitterIcon from '../components/Icons/Twitter';
 
 function Signin() {
+  const endpoints = { ...routesConfig.endpoints };
+
   const [formData, setFormData] = useState([
     {
       id: 1,
       title: 'Username',
       name: 'usernmae',
       value: '',
+      placeholder: '@username',
       component: 'input',
       type: 'text',
       section: 'text',
@@ -24,6 +30,7 @@ function Signin() {
       title: 'Password',
       name: 'password',
       value: '',
+      placeholder: '@username',
       component: 'input',
       type: 'password',
       section: 'password',
@@ -67,11 +74,9 @@ function Signin() {
             alt="Twitter Wall"
           />
 
-          <img
-            className="signin-page-section-twitter-icon"
-            src={TwitterIconPath}
-            alt="Twitter Icon"
-          />
+          <div className="signin-page-section-twitter-icon-area">
+            <TwitterIcon />
+          </div>
         </div>
 
         <div className="signin-page-section-right-area">
@@ -79,6 +84,10 @@ function Signin() {
             title="Enter your username and password"
             formData={formData}
             setFormData={setFormData}
+            mainBtnTitle="Sign in"
+            redirectTitle="Don't have an account?"
+            redirectLinkTitle="Sign up"
+            redirectPath={endpoints.signup}
           />
         </div>
       </section>
