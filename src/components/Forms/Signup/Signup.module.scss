@@ -1,0 +1,62 @@
+.container {
+  background-color: black;
+  width: 550px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1rem 2rem;
+
+  @media only screen and (max-width: 1180px) {
+    width: 600px;
+  }
+
+  @media only screen and (max-width: 650px) {
+    width: 90%;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    svg {
+      font-size: 3rem;
+      color: white;
+    }
+  }
+
+  .top-area {
+    margin-bottom: 200px;
+
+    h2 {
+      color: white;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .bottom-area {
+    .main-button {
+      color: white;
+      background-color: #1892df;
+      border-radius: 50px;
+      width: 100%;
+      padding: 0.7rem 0;
+      text-align: center;
+      margin-bottom: 1rem;
+      cursor: pointer;
+    }
+
+    .redirect-area {
+      color: rgba($color: #a0a0a0, $alpha: 1);
+      font-size: 14px;
+      margin-bottom: 1rem;
+
+      a {
+        color: #1892df;
+      }
+    }
+  }
+}

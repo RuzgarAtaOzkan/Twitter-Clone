@@ -2,7 +2,10 @@
 import React, { useState } from 'react';
 
 // COMPONENTS
-import AuthForm from '../components/AuthForm';
+import SignupForm from '../components/Forms/Signup';
+
+// ICONS
+import TwitterIcon from '../components/Icons/Twitter';
 
 // UTILS
 import dates from '../utils/dates';
@@ -16,7 +19,9 @@ function Signup() {
       name: 'name',
       value: '',
       component: 'input',
-      type: 'string',
+      type: 'text',
+      section: 'text',
+      focused: false,
     },
     {
       id: 2,
@@ -25,6 +30,8 @@ function Signup() {
       value: '',
       component: 'input',
       type: 'number',
+      section: 'number',
+      focused: false,
     },
     {
       id: 3,
@@ -33,6 +40,8 @@ function Signup() {
       value: '',
       type: 'number',
       component: 'select',
+      section: 'number',
+      focused: false,
       options: dates.getDays().map((current, index) => {
         return {
           value: index + 1,
@@ -46,8 +55,10 @@ function Signup() {
       title: 'Month',
       name: 'month',
       value: '',
-      type: 'string',
+      type: 'text',
       component: 'select',
+      section: 'text',
+      focused: false,
       options: dates.getMonths().map((current, index) => {
         return {
           value: index + 1,
@@ -63,6 +74,8 @@ function Signup() {
       value: '',
       type: 'number',
       component: 'select',
+      section: 'number',
+      focused: false,
       options: dates.getYears().map((current, index) => {
         return {
           value: index + 1,
@@ -75,11 +88,44 @@ function Signup() {
 
   return (
     <>
-      <AuthForm
-        title="Create Your Account"
-        formData={formData}
-        setFormData={setFormData}
-      />
+      <section
+        onClick={(e) => {
+          //console.log(e.target.parent);
+          if (
+            e.target.dataset.element !== 'input' &&
+            e.target.dataset.element !== 'select'
+          ) {
+            const newFormData = formData.map((c, i) => {
+              if (!c.value) {
+                return {
+                  ...c,
+                  focused: false,
+                };
+              }
+
+              return c;
+            });
+
+            setFormData(newFormData);
+          }
+        }}
+        className="signup-page-section"
+      >
+        <div className="signup-page-section-left-area">
+          <img
+            src="/assets/img/twitter-wall.png"
+            alt="Twitter Wall"
+          />
+
+          <div className="signup-page-section-twitter-icon-area">
+            <TwitterIcon />
+          </div>
+        </div>
+
+        <div className="signup-page-section-right-area">
+          <SignupForm />
+        </div>
+      </section>
     </>
   );
 }

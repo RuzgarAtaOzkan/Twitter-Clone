@@ -77,6 +77,7 @@ function Input({
         </div>
         {focused ? (
           <input
+            autocomplete="off"
             ref={inputRef}
             className={cn(focused && styles['input-active'])}
             onChange={onChange}

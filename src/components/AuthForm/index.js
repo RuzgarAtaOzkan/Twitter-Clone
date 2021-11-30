@@ -1,8 +1,8 @@
 // MODULES
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // COMPONENTS
-import Select from '../Select';
 import Input from '../AuthForm/Input';
 
 // ICONS
@@ -27,11 +27,6 @@ function AuthForm({
   if (typeof formData !== 'object') {
     throw new Error('Invalid type for data in AuthForm.js');
   }
-
-  const components = {
-    input: 'input',
-    select: 'select',
-  };
 
   function handleChange(e) {
     const newFormData = formData.map((current) => {
@@ -58,42 +53,26 @@ function AuthForm({
         <h2>{title}</h2>
 
         {formData.map((input, index) => {
-          if (input.component === components.input) {
-            return (
-              <div
-                key={input.id || index + 1}
-                className={styles['input-container']}
-              >
-                <Input
-                  id={input.id}
-                  onChange={handleChange}
-                  formData={formData}
-                  setFormData={setFormData}
-                  value={input.value}
-                  title={input.title}
-                  name={input.name}
-                  type={input.type}
-                  focused={input.focused}
-                  component={input.component}
-                  section={input.section}
-                />
-              </div>
-            );
-          }
-
-          if (input.component === components.select) {
-            return (
-              <div
-                key={input.id}
-                className={styles['select-container']}
-              >
-                {input.title}
-                <Select options={input.options || []} />
-              </div>
-            );
-          }
-
-          return null;
+          return (
+            <div
+              key={input.id || index + 1}
+              className={styles['input-container']}
+            >
+              <Input
+                id={input.id}
+                onChange={handleChange}
+                formData={formData}
+                setFormData={setFormData}
+                value={input.value}
+                title={input.title}
+                name={input.name}
+                type={input.type}
+                focused={input.focused}
+                component={input.component}
+                section={input.section}
+              />
+            </div>
+          );
         })}
       </div>
 
@@ -102,7 +81,9 @@ function AuthForm({
 
         <div className={styles['redirect-area']}>
           <span>{redirectTitle}</span>{' '}
-          <a href={redirectPath}>{redirectLinkTitle}</a>
+          <Link to={redirectPath || '/signup'}>
+            {redirectLinkTitle}
+          </Link>
         </div>
       </div>
     </div>

@@ -1,14 +1,14 @@
-.signin-page-section {
+.signup-page-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(34, 42, 49);
+  background-color: rgba(34, 42, 49, 1);
 
   @media only screen and (max-width: 1180px) {
     flex-direction: column-reverse;
   }
 
-  .signin-page-section-left-area {
+  .signup-page-section-left-area {
     width: 50%;
     overflow: hidden;
     object-fit: cover;
@@ -21,7 +21,7 @@
       width: 100%;
     }
 
-    .signin-page-section-twitter-icon {
+    .signup-page-section-twitter-icon {
       width: 300px;
       position: absolute;
       color: white;
@@ -32,7 +32,7 @@
       }
     }
 
-    .signin-page-section-twitter-icon-area {
+    .signup-page-section-twitter-icon-area {
       position: absolute;
 
       svg {
@@ -47,7 +47,7 @@
     }
   }
 
-  .signin-page-section-right-area {
+  .signup-page-section-right-area {
     width: 50%;
     display: flex;
     justify-content: flex-start;

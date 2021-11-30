@@ -16,7 +16,7 @@ function Signin() {
   const [formData, setFormData] = useState([
     {
       id: 1,
-      title: 'Username',
+      title: 'Username or email',
       name: 'usernmae',
       value: '',
       placeholder: '@username',
