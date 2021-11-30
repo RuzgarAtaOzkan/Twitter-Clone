@@ -120,6 +120,10 @@ function Signup() {
 
     const id = setTimeout(() => {
       for (const prop in _data) {
+        if (!_data[prop].value) {
+          _data[prop].error = '';
+        }
+
         if (_data[prop].value) {
           if (_data[prop].type === types.number) {
             if (isNaN(Number(_data[prop].value))) {
@@ -157,6 +161,7 @@ function Signup() {
           for (const prop in _data) {
             if (!_data[prop].value) {
               _data[prop].focused = false;
+              _data[prop].error = '';
             }
 
             if (_data[prop].value) {
