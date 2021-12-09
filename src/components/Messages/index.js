@@ -111,7 +111,7 @@ export const Messages = ({ dbMessages = [], dbPersons = [] }) => {
     setMessages(clientMessages);
     setPersons(clientPersons);
     return () => {};
-  }, []);
+  }, [dbMessages, dbPersons, currentUser]);
 
   return (
     <>
