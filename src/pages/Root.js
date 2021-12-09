@@ -1,7 +1,7 @@
 // MODULES
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+//import { useSelector } from 'react-redux';
 
 // CONFIG
 import routesConfig from '../config/routes';
@@ -10,16 +10,19 @@ function Root() {
   const history = useHistory();
   const endpoints = { ...routesConfig.endpoints };
 
-  const auth = useSelector((state) => state.auth);
+  //const auth = useSelector((state) => state.auth);
 
   useEffect(() => {
-    if (!auth.authenticated) {
-      return history.push(endpoints.signin);
-    }
+    history.push(endpoints.home);
+    /*
+      if (!auth.authenticated) {
+        return history.push(endpoints.signin);
+      }
 
-    if (auth.authenticated) {
-      return history.push(endpoints.home);
-    }
+      if (auth.authenticated) {
+        return history.push(endpoints.home);
+      }
+    */
 
     return () => {};
   });

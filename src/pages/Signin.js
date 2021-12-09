@@ -1,5 +1,5 @@
 // MODULES
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 // COMPONENTS
 import AuthForm from '../components/AuthForm';
@@ -37,11 +37,6 @@ function Signin() {
       focused: false,
     },
   ]);
-
-  useEffect(() => {
-    //console.log(formData);
-    return () => {};
-  }, [formData]);
 
   return (
     <>
