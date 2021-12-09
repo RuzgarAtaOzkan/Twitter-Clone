@@ -79,10 +79,7 @@ export const Messages = () => {
 
   return (
     <>
-      <MessagesComponent
-        dbMessages={messages || []}
-        dbPersons={persons || []}
-      />
+      <MessagesComponent dbMessages={messages} dbPersons={persons} />
     </>
   );
 };

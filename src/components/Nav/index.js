@@ -32,7 +32,6 @@ import FeatherIcon from '../Icons/Feather';
 import styles from './Nav.module.scss';
 
 function Nav() {
-  const [activeIcon, setActiveIcon] = useState(-1);
   const [moreOptionsDropdown, setMoreOptionsDropdown] =
     useState(false);
   const [accountDropdown, setAccountDropdown] = useState(false);
@@ -169,14 +168,13 @@ function Nav() {
                   >
                     <Link
                       onClick={() => {
-                        setActiveIcon(index);
                         navItem.onClick && navItem.onClick();
                       }}
                       to={navItem.path ? navItem.path : '#'}
                       className={navItem.dropdown && 'pos-rel'}
                     >
                       <div className={styles['icon']}>
-                        {index === activeIcon
+                        {navItem.path === window.location.pathname
                           ? navItem.activeIcon
                           : navItem.icon}
                       </div>
