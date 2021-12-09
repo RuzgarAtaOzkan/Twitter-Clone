@@ -1,11 +1,12 @@
 const user = {
   id: 0,
   email: '',
+  username: 'ruzgarataozkan',
   name: '',
   surname: '',
   fullName: '',
   phone: '',
-  company: '',
+  emailVerified: false,
   settings: {
     theme: '',
   },

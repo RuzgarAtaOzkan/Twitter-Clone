@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import cn from 'classnames';
 
 import { RiArrowDropDownFill } from 'react-icons/ri';
@@ -10,42 +10,23 @@ function Dropdown({
   items = [],
   active = false,
   setActive = () => {},
-  pos,
   classNames,
   arrow,
 }) {
-  const [dropdownPos] = useState('');
   const dropdownArea = useRef();
-
-  function getDropdownPos() {
-    if (dropdownArea.current) {
-      const yPos = dropdownArea?.current?.getBoundingClientRect()?.y;
-
-      // TODO
-      if (yPos < 10) {
-        //setDropdownPos('top');
-      } else {
-        //setDropdownPos('bottom');
-      }
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener('load', getDropdownPos);
-    return () => {
-      window.removeEventListener('load', getDropdownPos);
-    };
-  }, [dropdownArea, dropdownPos]);
 
   return active ? (
     <>
       <div
+        onClick={() => {
+          setActive(false);
+        }}
+        className={styles['background']}
+      ></div>
+      <div
+        onClick={() => setActive(false)}
         ref={dropdownArea}
-        className={cn(
-          styles['dropdown-area'],
-          styles[dropdownPos],
-          pos && styles[pos],
-        )}
+        className={cn(styles['dropdown-area'])}
       >
         {items?.map((item, index) => {
           return (

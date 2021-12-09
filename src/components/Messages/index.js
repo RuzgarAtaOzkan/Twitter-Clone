@@ -1,6 +1,6 @@
 // MODULES
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import cn from 'classnames';
 
 // ICONS
@@ -18,72 +18,100 @@ import { setSidebar } from '../../state/global/actions';
 // STYLES
 import styles from './Messages.module.scss';
 
-export const Messages = () => {
-  const dispatch = useDispatch();
+function configureDBMessages(dbMessages, currentUser) {
+  if (!dbMessages || !currentUser) {
+    throw new Error(
+      'Too few arguments specified for configureMessages',
+    );
+  }
 
-  const [choosenUser, setChoosenUser] = useState(null); // choosen username.
-  const [messages] = useState([
-    {
-      from: 'you',
-      type: 'post',
-      content: 'If the Bishop moves forward, the Queen can take him.',
-      media: '/assets/img/ruzgar.JPG',
-      date: 1627829943208,
-    },
-    {
-      from: 'friend',
-      type: 'regular',
-      content: 'If the Bishop moves forward, the Queen can take him.',
-      date: 1627839943208,
-    },
-    {
-      from: 'you',
-      type: 'regular',
-      content: 'If the Bishop moves forward, the Queen can take him.',
-      date: 1627849943208,
-    },
-    {
-      from: 'friend',
-      type: 'post',
-      content: 'If the Bishop moves forward, the Queen can take him.',
-      media: '/assets/img/ruzgar.JPG',
-      date: 1627859943208,
-    },
-    {
-      from: 'you',
-      type: 'post',
-      content: 'If the Bishop moves forward, the Queen can take him.',
-      media: '/assets/img/ruzgar.JPG',
-      date: 1627869943208,
-    },
-  ]);
+  if (typeof dbMessages !== 'object' || !Array.isArray(dbMessages)) {
+    throw new Error(
+      'Invalid typeof dbMessages for configureDBMessages',
+    );
+  }
+
+  if (typeof currentUser !== 'object') {
+    throw new Error(
+      'Invalid typeof currentUser for configureDBMessages',
+    );
+  }
+
+  const senderTypes = {
+    you: 'you',
+    recipient: 'recipient',
+  };
+
+  const messageTypes = {
+    post: 'post',
+    standart: 'standart',
+  };
+
+  const messages = dbMessages.map((currentMsg, index) => {
+    return {
+      from:
+        currentUser.username.toLowerCase() ===
+        currentMsg.sender.username.toLowerCase()
+          ? senderTypes.you
+          : senderTypes.recipient,
+      type: currentMsg.media
+        ? messageTypes.post
+        : messageTypes.standart,
+      content: currentMsg.text,
+      media: currentMsg.media,
+      date: currentMsg.createdAt,
+    };
+  });
+
+  // Mapped message objects for UI.
+  return messages;
+}
+
+function configureDBPersons(dbPersons) {
+  if (!dbPersons) {
+    throw new Error(
+      'Too few arguments specified for configureMessages',
+    );
+  }
+
+  if (typeof dbPersons !== 'object' || !Array.isArray(dbPersons)) {
+    throw new Error('Invalid typeof dbPersons for congiureDBPersons');
+  }
+
+  const persons = dbPersons.map((currentPerson, index) => {
+    return {
+      name: currentPerson.name,
+      username: currentPerson.username,
+      date: currentPerson.createdAt,
+      img: currentPerson.img,
+    };
+  });
+
+  // Mapped person objects for UI.
+  return persons;
+}
+
+export const Messages = ({ dbMessages = [], dbPersons = [] }) => {
+  const dispatch = useDispatch();
+  const currentUser = useSelector((state) => state.auth.user);
+
+  const [choosenUser, setChoosenUser] = useState(null);
   const [searchValue, setSearchValue] = useState('');
-  const [persons] = useState([
-    {
-      name: 'Ruzgar Ata Ozkan',
-      username: '@RuzgarAtaOzkan',
-      date: 'jul 13',
-      img: '/assets/img/ruzgar.JPG',
-    },
-    {
-      name: 'Erce Kaan Sazli',
-      username: '@ErceKaanSazli',
-      date: 'april 3',
-      img: '/assets/img/erce.jpg',
-    },
-    {
-      name: 'Nisan Gurol',
-      username: '@NisanGurol',
-      date: 'jul 16',
-      img: '/assets/img/nisan.jpg',
-    },
-    {
-      name: 'Basar Ballioz',
-      username: '@basarballioz',
-      date: 'sep 30',
-      img: '/assets/img/basar.jpg',
-    },
-  ]);
+  const [messages, setMessages] = useState([]);
+  const [persons, setPersons] = useState([]);
+
+  useEffect(() => {
+    const clientMessages = configureDBMessages(
+      dbMessages,
+      currentUser,
+    );
+
+    const clientPersons = configureDBPersons(dbPersons);
+
+    setMessages(clientMessages);
+    setPersons(clientPersons);
+    return () => {};
+  }, []);
 
   return (
     <>
@@ -122,7 +150,7 @@ export const Messages = () => {
           {persons.map((person, index) => {
             return (
               <div
-                onClick={() => setChoosenUser(person.username)}
+                onClick={() => setChoosenUser(person)}
                 key={index}
                 className={styles['person-section']}
               >
@@ -166,12 +194,14 @@ export const Messages = () => {
                 </div>
 
                 <div className={styles['image']}>
-                  <img alt="Profile" src="/assets/img/basar.jpg" />
+                  <img alt="Profile" src={choosenUser.img} />
                 </div>
                 <div className={styles['info-area']}>
-                  <div className={styles['name']}>Basar</div>
+                  <div className={styles['name']}>
+                    {choosenUser.name}
+                  </div>
                   <div className={styles['username']}>
-                    @basarballioz
+                    {choosenUser.username}
                   </div>
                 </div>
               </div>
@@ -190,14 +220,23 @@ export const Messages = () => {
                       styles[message.from],
                     )}
                   >
-                    <div className={styles['image']}>
-                      <img
-                        src="/assets/img/basar.jpg"
-                        alt="Profile"
-                      />
+                    <div className={styles['left-area']}>
+                      <div className={styles['image']}>
+                        <img src={choosenUser.img} alt="Profile" />
+                      </div>
                     </div>
-                    <div className={styles[message.type]}>
-                      {message.content}
+                    <div className={styles['right-area']}>
+                      <div
+                        className={cn(
+                          styles['content'],
+                          styles[message.type],
+                        )}
+                      >
+                        {message.content}
+                      </div>
+                      <div className={styles['date']}>
+                        {message.date}
+                      </div>
                     </div>
                   </div>
                 );

@@ -63,7 +63,8 @@ header {
 
               svg {
                 color: #1892df;
-                font-size: 1.6rem;
+                font-size: 2.6rem;
+                padding: 0;
               }
             }
 
@@ -118,7 +119,6 @@ header {
         .reset {
           & > a {
             margin: 0;
-            padding: 0;
             padding: 0.9rem;
           }
         }

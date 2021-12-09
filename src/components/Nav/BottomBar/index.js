@@ -1,6 +1,6 @@
 // MODULES
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
@@ -18,7 +18,7 @@ import styles from './BottomBar.module.scss';
 
 function BottomBar() {
   const dispatch = useDispatch();
-  const auth = useSelector((state) => state.auth);
+  //const auth = useSelector((state) => state.auth);
 
   const [activeIcon, setActiveIcon] = useState(-1);
   const [pathname, setPathname] = useState(window.location.pathname);
@@ -57,8 +57,9 @@ function BottomBar() {
     };
   }, []);
 
+  //auth.authenticated && 
   return (
-    auth.authenticated && (
+    
       <nav>
         <div className={styles['bottom-bar-area']}>
           {bottomBarItems.map((item, index) => {
@@ -90,7 +91,7 @@ function BottomBar() {
           })}
         </div>
       </nav>
-    )
+    
   );
 }
 

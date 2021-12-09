@@ -77,13 +77,19 @@
           align-items: center;
           font-size: 14px;
 
-          .person-box-name {
-            font-weight: bold;
-            width: 50%;
-            margin-right: 5px;
+          @media only screen and (max-width: 500px) {
+            flex-direction: column;
+            justify-content: flex-start;
           }
 
-          .person-box-usernmae {
+          .person-box-name {
+            font-weight: bold;
+            margin-right: 5px;
+            margin-bottom: 0.2rem;
+          }
+
+          .person-box-username {
+            color: #505050;
           }
         }
       }
@@ -167,6 +173,7 @@
 
       .info-area {
         margin-left: 0.7rem;
+
         .name {
           font-weight: bold;
           font-size: 18px;
@@ -196,40 +203,84 @@
   }
 
   .messages {
-    position: relative;
     height: 100%;
+    padding: 0 1rem;
 
     .message {
-      border: 1px solid red;
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 2.2rem;
 
-      .image {
-        img {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          object-fit: cover;
+      @media only screen and (max-width: 500px) {
+        margin-bottom: 3rem;
+      }
+
+      .left-area {
+        .image {
+          display: none;
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
         }
       }
 
-      .regular {
-      }
+      .right-area {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-left: 0.5rem;
 
-      .post {
+        .content {
+          font-size: 15px;
+          border: 1px solid rgba($color: #c4c4c4, $alpha: 1);
+          min-height: 45px;
+          display: flex;
+          align-items: center;
+          padding: 0 1rem;
+          border-radius: 15px 15px 15px 0;
+
+          @media only screen and (max-width: 500px) {
+            padding: 1rem 1rem;
+          }
+        }
+
+        .date {
+          position: absolute;
+          bottom: -17px;
+          font-size: 12px;
+          color: #686868;
+        }
       }
     }
 
     .you {
-      display: flex;
       justify-content: flex-end;
 
-      .image {
-        display: none;
+      .right-area {
+        .content {
+          border: 1px solid rgba($color: #1892df, $alpha: 1);
+          color: white;
+          background-color: #1892df;
+          border-radius: 15px 15px 0 15px;
+        }
+        .date {
+          right: 0;
+        }
       }
     }
 
-    .friend {
-      display: flex;
+    .recipient {
       justify-content: flex-start;
+
+      .left-area {
+        .image {
+          display: block;
+        }
+      }
     }
   }
 }

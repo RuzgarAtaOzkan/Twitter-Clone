@@ -36,7 +36,6 @@ function Nav() {
   const [moreOptionsDropdown, setMoreOptionsDropdown] =
     useState(false);
   const [accountDropdown, setAccountDropdown] = useState(false);
-
   const [displayModalOpen, setDisplayModalOpen] = useState(false);
 
   const navItems = [
@@ -86,7 +85,11 @@ function Nav() {
       activeIcon: <MoreIcon active />,
       icon: <MoreIcon />,
       title: 'More',
-      onClick: () => setMoreOptionsDropdown(!moreOptionsDropdown),
+      onClick: () => {
+        if (!moreOptionsDropdown) {
+          setMoreOptionsDropdown(true);
+        }
+      },
       dropdown: (
         <Dropdown
           items={[
