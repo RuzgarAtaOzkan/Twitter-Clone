@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 // COMPONENTS
 import Input from './Input';
 
-// CONFIG
-
 // UTILS
 import dates from '../../../utils/dates';
 import title from '../../../utils/title';
@@ -39,7 +37,7 @@ function Signup() {
       title: 'Email',
       name: 'email',
       value: '',
-      type: 'text',
+      type: 'email',
       component: 'input',
       focused: false,
     },

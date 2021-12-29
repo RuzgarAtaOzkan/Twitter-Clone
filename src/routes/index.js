@@ -35,6 +35,9 @@ const NotificationsPage = lazy(() =>
   import('../pages/Notifications.js'),
 );
 
+// _Redirect pages
+const _Redirect = lazy(() => import('../pages/_Redirect.js'));
+
 // Settings layout pages
 const MessagesPage = lazy(() => import('../pages/Messages.js'));
 
@@ -48,6 +51,7 @@ function Routes() {
           <Switch>
             {/* Root route */}
             <Route exact path={endpoints.root} component={RootPage} />
+            <Route path="/redirect" component={_Redirect} />
 
             <AuthLayout
               path={endpoints.signup}
@@ -77,6 +81,7 @@ function Routes() {
             />
           </Switch>
 
+          {/* Global independent components such as Bottom-Navigation-Bar */}
           <GlobalComponents />
         </Router>
       </Suspense>

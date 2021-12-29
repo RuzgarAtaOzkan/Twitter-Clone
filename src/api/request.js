@@ -4,7 +4,7 @@ import methods from './methods';
 // axios instance
 import instance from './instance';
 
-async function request({ endpoint, method, headers, body }) {
+async function sendRequest({ endpoint, method, headers, body }) {
   if (endpoint === null || endpoint === undefined || !method) {
     throw new Error('Too few arguments in request.js');
   }
@@ -34,4 +34,4 @@ async function request({ endpoint, method, headers, body }) {
   }
 }
 
-export default request;
+export default sendRequest;

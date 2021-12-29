@@ -1,6 +1,9 @@
 // MODULES
 import React, { useState } from 'react';
 
+// API
+import request from '../api/request';
+
 // COMPONENTS
 import SignupForm from '../components/Forms/Signup';
 
