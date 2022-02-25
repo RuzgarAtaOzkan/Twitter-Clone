@@ -2,6 +2,14 @@
 
 Project deployed to https://twitter-clone-ruzgarataozkan.vercel.app/home
 
+## Routes
+- /home
+- /signup
+- /signin
+- /explore
+- /notifications
+- /messages
+
 ## Install
 
 Assuming you have NodeJS ang Git installed.
